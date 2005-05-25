@@ -1,0 +1,22 @@
+
+export(
+       combinations,
+       ddirichlet,
+       even,
+       foldchange,
+       foldchange2logratio,
+       inv.logit,
+       invalid,
+       logit,
+       logratio2foldchange,
+       mixedorder,
+       mixedsort,
+       odd,
+       permutations,
+       permute,
+       quantcut,
+       rdirichlet,
+       running,
+       scat
+       )
+
