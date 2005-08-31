@@ -1,0 +1,11 @@
+CHANGES IN GTOOLS 2.1.0
+-----------------------
+
+ - Added assert.R (and documentation)
+
+ - Added the defmacro() function, extracted from Lumley T. "Programmer's Niche:
+   Macros in {R}", R News, 2001, Vol 1, No. 3, pp 11--13, 
+   \url{http://CRAN.R-project.org/doc/Rnews/}
+
+ - Added DESCRIPTION and removed DESCRIPTION.in
+

@@ -1,5 +1,6 @@
 
 export(
+       assert,
        combinations,
        ddirichlet,
        defmacro,

@@ -1,23 +1,34 @@
+2005-09-02 12:43  warnes
+
+	* R/assert.R, man/assert.Rd: Add assert() and documentation
+
+2005-09-02 12:28  warnes
+
+	* man/defmacro.Rd: Fix problem in defmacro.Rd file: don't use
+	  \code{} in the example section.
+
+2005-08-31 16:00  tag RELEASE_2_0_9
+
 2005-08-31 16:00  warnes
 
 	* DESCRIPTION, NAMESPACE, R/defmacro.R, man/defmacro.Rd: Adding the
 	  defmacro() function, extracted from
 
 	    Lumley T. "Programmer's Niche: Macros in {R}", R News, 2001,
-	    Vol 1, No. 3, pp 11--13,
-	    \url{http://CRAN.R-project.org/doc/Rnews/}
+	  Vol 1,
+	    No. 3, pp 11--13, \url{http://CRAN.R-project.org/doc/Rnews/}
 
 2005-08-31 12:18  warnes
 
 	* DESCRIPTION, DESCRIPTION.in: Add stand-alone DESCRIPTION file and
 	  remove old DESCRIPTION.in file.
 
-2005-06-13 13:08  nj7w
+2005-06-13 13:08  nj7w (Nitin Jain)
 
 	* R/mixedsort.R: Fixed a bug in mixedsort - check if "which.na" and
 	  "which.blank" is numeric(0) before subsetting the datasets.
 
-2005-06-09 10:20  nj7w
+2005-06-09 10:20  nj7w (Nitin Jain)
 
 	* R/RSCompat.S, R/combinations.R, R/dirichlet.R, R/foldchange.R,
 	  R/invalid.R, R/logit.R, R/mixedsort.R, R/oddeven.R, R/permute.R,
