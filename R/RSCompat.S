@@ -1,6 +1,12 @@
-# $Id: RSCompat.S,v 1.8 2003/04/04 13:58:59 warnes Exp $
+# $Id: RSCompat.S,v 1.9 2005/06/09 14:20:28 nj7w Exp $
 #
 # $Log: RSCompat.S,v $
+# Revision 1.9  2005/06/09 14:20:28  nj7w
+# Updating the version number, and various help files to synchronize splitting of gregmisc bundle in 4 individual components.
+#
+# Revision 1.1.1.1  2005/05/25 22:17:28  nj7w
+# Initial submision as individual package
+#
 # Revision 1.8  2003/04/04 13:58:59  warnes
 #
 # - Replace 'T' with 'TRUE'

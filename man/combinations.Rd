@@ -1,4 +1,4 @@
-% $Id: combinations.Rd,v 1.9 2005/04/01 23:00:50 warnes Exp $
+% $Id: combinations.Rd,v 1.10 2005/06/09 14:20:29 nj7w Exp $
 %
 \name{combinations}
 \alias{combinations}

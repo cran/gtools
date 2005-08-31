@@ -1,4 +1,4 @@
-% $Id: foldchange.Rd,v 1.4 2005/04/01 23:00:50 warnes Exp $
+% $Id: foldchange.Rd,v 1.5 2005/06/09 14:20:29 nj7w Exp $
 %
 \name{foldchange}
 \alias{foldchange}

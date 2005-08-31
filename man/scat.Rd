@@ -1,4 +1,4 @@
-% $Id: scat.Rd,v 1.1 2005/04/07 00:28:57 warnes Exp $
+% $Id: scat.Rd,v 1.2 2005/06/09 14:20:30 nj7w Exp $
 
 \name{scat}
 \alias{scat}

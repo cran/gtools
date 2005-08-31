@@ -1,4 +1,4 @@
-% $Id: running.Rd,v 1.12 2005/04/01 23:00:51 warnes Exp $
+% $Id: running.Rd,v 1.13 2005/06/09 14:20:30 nj7w Exp $
 %
 \name{running}
 \alias{running}

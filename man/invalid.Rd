@@ -1,4 +1,4 @@
-% $Id: invalid.Rd,v 1.2 2005/04/01 23:00:50 warnes Exp $
+% $Id: invalid.Rd,v 1.3 2005/06/09 14:20:29 nj7w Exp $
 %
 \name{invalid}
 \alias{invalid}

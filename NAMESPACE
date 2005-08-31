@@ -2,6 +2,7 @@
 export(
        combinations,
        ddirichlet,
+       defmacro,
        even,
        foldchange,
        foldchange2logratio,

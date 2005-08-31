@@ -1,4 +1,4 @@
-% $Id: quantcut.Rd,v 1.4 2005/04/02 02:37:05 warnes Exp $
+% $Id: quantcut.Rd,v 1.5 2005/06/09 14:20:30 nj7w Exp $
 %
 \name{quantcut}
 \alias{quantcut}

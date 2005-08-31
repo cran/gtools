@@ -1,4 +1,4 @@
-# $Id: mixedsort.R,v 1.8 2005/05/10 22:05:47 warnes Exp $
+# $Id: mixedsort.R,v 1.10 2005/06/13 17:08:41 nj7w Exp $
 
 mixedsort <- function(x) x[mixedorder(x)]
 
@@ -34,7 +34,9 @@ mixedorder <- function(x)
     which.nas <- which(is.na(x))
     which.blanks <- which(x=="")
 
+    if(length(which.blanks) >0)
     x[ which.blanks ] <- -Inf
+    if(length(which.nas) >0)
     x[ which.nas ] <- Inf
 
     ####
@@ -90,7 +92,8 @@ mixedorder <- function(x)
     rank.overall <- ifelse(is.na(rank.character),rank.numeric,rank.character)
 
     order.frame <- as.data.frame(rank.overall)
-    order.frame[which.nas,] <- Inf
+    if(length(which.nas) > 0)
+      order.frame[which.nas,] <- Inf
     retval <- do.call("order",order.frame)
 
     return(retval)
