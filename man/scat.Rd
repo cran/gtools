@@ -1,4 +1,4 @@
-% $Id: scat.Rd,v 1.2 2005/06/09 14:20:30 nj7w Exp $
+% $Id: scat.Rd,v 1.3 2005/09/12 15:44:14 nj7w Exp $
 
 \name{scat}
 \alias{scat}
@@ -18,7 +18,7 @@ scat(...)
 \value{
   NULL (invisibly)
 }
-\author{Gregory R. Warnes \email{gregory\_r\_warnes@groton.pfizer.com}}
+\author{Gregory R. Warnes \email{gregory.r.warnes@pfizer.com}}
 \seealso{ \code{\link[base]{cat}}}
 \examples{
 options(DEBUG=NULL) # makee sure DEBUG isn't set

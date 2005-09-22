@@ -1,48 +1,72 @@
 \name{defmacro}
 \alias{defmacro}
+\alias{strmacro}
 \title{Define a macro}
 \description{
-  Define a macro.
+  \code{defmacro} define a macro that uses R expression replacement
+
+  \code{strmacro} define a macro that uses string replacement
 }
 \usage{
 defmacro(..., expr)
+strmacro(..., expr, strexpr)
 }
 \arguments{
   \item{\dots}{ macro argument list }
-  \item{expr}{ macro body }
+  \item{expr}{ R expression defining the macro body }
+  \item{strexpr}{ character string defining the macro body }
 }
 \details{
-  When evaluated, a macros created with \code{defmacro} substitutes the
-  provided arguments into the \emph{parsed} source code included in
-  \code{expr}, and then evaluates the results.  This is particularly
-  useful for programmatically creating new functions.
 
-  "Note that because [the defmacro code] works on the parsed expression,
-  not on a text string, defmacro avoids some of the problems with C
-  preprocessor
-  macros. In
+  \code{defmacro} and \code{strmacro} create a macro from the expression
+  given in \code{expr}, with formal arguments given by the other
+  elements of the argument list.
+
+  A macro is similar to a function definition, the arguments are
+  handled.  In a function, formal arguments are simply variables that 
+  contains the result of evaluating the expressions provided to the
+  function call.  In contrast, macros actually modify the macro body by
+  \code{replacing} each formal argument by the expression
+  (\code{defmacro}) or string (\code{strmacro}) provided to the macro
+  call.
+
+  For \code{defmacro}, the special argument name \code{DOTS} will be
+  replaced by \code{...} in the formal argument list of the macro so
+  that \code{...}  in the body of the expression can be used to obtain
+  any additional arguments passed to the macro. For \code{strmacro} you
+  can mimic this behavior providing a \code{DOTS=""} argument.  This is
+  illustrated by the last example below.
+
+  Macros are often useful for creating new functions during code execution.
+}
+\note{
+  Note that because [the defmacro code] works on the parsed expression,
+  not on a text string, defmacro avoids some of the problems of
+  traditional string substitution macros such as \code{strmacro} and the C
+  preprocessor macros. For example, in
 \preformatted{
   mul <- defmacro(a, b, expr={a*b})
 }
   a C programmer might expect
   \code{mul(i, j + k)} to expand (incorrectly) to \code{i*j + k}. In fact it
-  expands correctly, to the equivalent of \code{i*(j + k)}."
-  (From the reference below.)
+  expands correctly, to the equivalent of \code{i*(j + k)}.
   
-  For a more complete description of the differences between functions
-  and macros, please see the reference below.
+  For a discussion of the differences between functions
+  and macros, please Thomas Lumley's R-News article (reference below).
 }
 \value{
   A macro function.
 }
 \references{
-  The code for this function is directly taken from:
+  The original \code{defmacro} code was directly taken from:
 
   Lumley T. "Programmer's Niche: Macros in {R}", R News, 2001, Vol 1,
   No. 3, pp 11--13, \url{http://CRAN.R-project.org/doc/Rnews/}
 }
-\author{ Thomas Lumley.  Packaged by Gregory R. Warnes
-  \email{gregory.r.warnes@pfizer.com} }
+\author{ Thomas Lumley wrote \code{defmacro}.  Gregory R. Warnes
+  \email{gregory.r.warnes@pfizer.com} enhanced it and created
+  \code{strmacro}.
+}
 \seealso{
   \code{\link[base]{function}}
   \code{\link[base]{substitute}},
@@ -52,7 +76,6 @@ defmacro(..., expr)
   \code{\link[base]{parse}},
 }
 \examples{
-
 ####
 # macro for replacing a specified missing value indicator with NA
 # within a dataframe
@@ -62,9 +85,7 @@ setNA <- defmacro(df, var, values,
                          df$var[df$var \%in\% values] <- NA
                        })
 
-###
-# create example data, 999 is missing value indicator
-###
+# create example data using 999 as a missing value indicator
 d <- data.frame(
    Grp=c("Trt", "Ctl", "Ctl", "Trt", "Ctl", "Ctl", "Trt", "Ctl", "Trt", "Ctl"),
    V1=c(1, 2, 3, 4, 5, 6, 999, 8,   9,  10),
@@ -72,48 +93,53 @@ d <- data.frame(
                )
 d
 
-###
 # Try it out
-###
 setNA(d, V1, 999)
 setNA(d, V2, 999)
 d
 
 
 ###
-# Macro for creating a plotting function
+# Expression macro
 ###
-plotit <- defmacro( df, var, col="red", title="", expr=
-  {
-    plot( df$var ~ df$Grp, type="b", col=col, main=title )
-  } )
+plot.d <- defmacro( df, var, DOTS, col="red", title="", expr=
+  plot( df$var ~ df$Grp, type="b", col=col, main=title, ... )
+)
 
-# Notes:
-# 1 - The macro expansion of 'col' will correctly replaces the
-# object name 'col' (right hand side of col=col) and not the argument
-# name (left hand side of col=col) in the function call to plot
-# 2 - The plot's y axis label 
+plot.d( d, V1)
+plot.d( d, V1, col="blue" )
+plot.d( d, V1, lwd=4)  # use optional 'DOTS' argument
 
-plotit( d, V1)
-plotit( d, V1, "blue" )
+###
+# String macro (note the quoted text in the calls below)
+# 
+# This style of macro can be useful when you are reading
+# function arguments from a text file
+###
+plot.s <- strmacro( DF, VAR, COL="'red'", TITLE="''", DOTS="", expr=
+  plot( DF$VAR ~ DF$Grp, type="b", col=COL, main=TITLE, DOTS)
+)
 
-# works with variables too
-color <- "cyan"
-plotit( d, V1, color, title="Crazy Plot")
+plot.s( "d", "V1")
+plot.s( DF="d", VAR="V1", COL='"blue"' ) 
+plot.s( "d", "V1", DOTS='lwd=4')  # use optional 'DOTS' argument
 
-  # An equivalent function is somewhat messier, since it must either explicitly
-  # construct the y axis label, duplicating some of the work of the plot
-  # function:
-  plotit <- function( df, var, col="red", title="" )
-  {
-      dname <- deparse(substitute(df))
-      vname <- deparse(substitute(var))
-      plot( df[[vname]] ~ df$Grp, type="b", col=col, title=title,
-            ylab=paste( dname, "$", vname, sep='' ) )
-  }
-  # or we explicitly construct the call and then call eval.  The code for
-  # the latter approach is # omiited since this is quite messy and
-  # requires a lot of work.
-  
+
+
+#######
+# Create a macro that defines new functions
+######
+plot.sf <- defmacro(type='b', col='black',
+                    title=deparse(substitute(x)), DOTS, expr=
+  function(x,y) plot( x,y, type=type, col=col, main=title, ...)
+)
+
+plot.red  <- plot.sf(col='red',title='Red is more Fun!')
+plot.blue <- plot.sf(col='blue',title="Blue is Best!", lty=2)
+
+plot.red(1:100,rnorm(100))
+plot.blue(1:100,rnorm(100))
+
+
 }
 \keyword{programming}

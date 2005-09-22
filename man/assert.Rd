@@ -21,7 +21,7 @@ assert(FLAG)
 \value{
   None.  Evaluated only for its side effect.
 }
-\author{Gregory R. Warnes \email{gregory\_r\_warnes@groton.pfizer.com} }
+\author{Gregory R. Warnes \email{gregory.r.warnes@pfizer.com} }
 \seealso{ \code{\link[base]{stop}}, \code{\link[base]{warning}} }
 \examples{
 

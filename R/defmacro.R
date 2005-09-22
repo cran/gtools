@@ -11,7 +11,7 @@
 ##  month	       = {September},
 ##  url	       = {http://CRAN.R-project.org/doc/Rnews/}
 ##}
-defmacro <- function(..., expr)
+defmacro <- function(..., expr) #, DOTS=FALSE)
 {
   expr <- substitute(expr)
   a <- substitute(list(...))[-1]
@@ -20,7 +20,7 @@ defmacro <- function(..., expr)
   nn <- names(a)
   if (is.null(nn))
     nn <- rep("", length(a))
-  for(i in seq(length=length(a)))
+  for(i in 1:length(a))
     {
       if (nn[i] == "")
         {
@@ -29,10 +29,15 @@ defmacro <- function(..., expr)
           a[[i]] <- substitute(stop(foo),
                                list(foo = msg))
         }
+      if (nn[i] == "DOTS")
+        {
+          nn[i] <- "..."
+          a[[i]] <- formals(function(...){})[[1]]
+        }
     }
   names(a) <- nn
   a <- as.list(a)
-  
+
   ## this is where the work is done
   ff <- eval(substitute(
                         function()

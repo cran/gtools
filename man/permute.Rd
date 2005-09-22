@@ -1,4 +1,4 @@
-% $Id: permute.Rd,v 1.3 2005/06/09 14:20:30 nj7w Exp $
+% $Id: permute.Rd,v 1.4 2005/09/12 15:44:14 nj7w Exp $
 %
 \name{permute}
 \alias{permute}
@@ -18,7 +18,7 @@ permute(x)
 \value{
   Vector with the original items reordered.
 }
-\author{ Gregory R. Warnes \email{gregory\_r\_warnes@groton.pfizer.com} }
+\author{ Gregory R. Warnes \email{gregory.r.warnes@pfizer.com} }
 \seealso{ \code{\link{sample}} }
 
 \examples{
