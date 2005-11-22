@@ -1,4 +1,4 @@
-% $Id: invalid.Rd,v 1.3 2005/06/09 14:20:29 nj7w Exp $
+% $Id: invalid.Rd,v 1.4 2005/12/01 16:50:14 nj7w Exp $
 %
 \name{invalid}
 \alias{invalid}
@@ -17,7 +17,7 @@ invalid(x)
 \value{
   Logical value.
 }
-\author{Gregory R. Warnes \email{Gregory\_R\_Warnes@groton.pfizer.com} }
+\author{Gregory R. Warnes \email{gregory.r.warnes@pfizer.com} }
 \seealso{ \code{\link[base]{missing}}, \code{\link[base]{is.na}},
   \code{\link[base]{is.null}} }
 \examples{

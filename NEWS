@@ -1,4 +1,23 @@
-CHANGES IN GTOOLS 2.1.0
+CHANGES IN gtools 2.2.2
+-----------------------
+
+ -  src/setTCPNoDelay.c: Add C source code for setTCPNoDelay.
+
+ -  NAMESPACE: Add UseDynLib to NAMESPACE so the shared library gets
+	       properly loaded.
+
+ - Updated Greg's email address. 
+
+CHANGES IN gtools 2.2.1
+-----------------------
+
+  - New function 'addLast' that adds functions to R's .Last() so
+    that they will be executed when R is terminating.
+
+  - New function setTCPNoDelay() that allows the TCP_NODELAY flag to
+    be changed on socket objects.
+
+CHANGES IN gtools 2.1.0
 -----------------------
 
  - Added assert.R (and documentation)

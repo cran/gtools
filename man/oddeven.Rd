@@ -1,4 +1,4 @@
-% $Id: oddeven.Rd,v 1.3 2005/06/09 14:20:30 nj7w Exp $
+% $Id: oddeven.Rd,v 1.4 2005/12/01 16:50:14 nj7w Exp $
 %
 \name{odd}
 \alias{odd}
@@ -17,7 +17,7 @@ even(x)
 \value{
   Vector of TRUE/FALSE values.
 }
-\author{ Gregory R. Warnes \email{Gregory\_R\_Warnes@groton.pfizer.com}}
+\author{ Gregory R. Warnes \email{gregory.r.warnes@pfizer.com}}
 \seealso{ \code{\link[base]{round}} }
 \examples{
 

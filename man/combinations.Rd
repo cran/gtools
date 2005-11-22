@@ -1,4 +1,4 @@
-% $Id: combinations.Rd,v 1.10 2005/06/09 14:20:29 nj7w Exp $
+% $Id: combinations.Rd,v 1.11 2005/12/01 16:50:14 nj7w Exp $
 %
 \name{combinations}
 \alias{combinations}
@@ -40,7 +40,7 @@ permutations(n, r, v=1:n, set=TRUE, repeats.allowed=FALSE)
 \author{ Original versions by Bill Venables
   \email{Bill.Venables@cmis.csiro.au}.  Extended to handle
   \code{repeats.allowed} by Gregory R. Warnes
-  \email{Gregory\_R\_Warnes@groton.pfizer.com}.
+  \email{gregory.r.warnes@pfizer.com}.
   }
 \seealso{ \code{\link[base]{choose}}, \code{\link[base]{options}} }
 \examples{
