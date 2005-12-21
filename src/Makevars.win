@@ -1,0 +1,1 @@
+DLLLIBS:=$(DLLLIBS) -lwsock32

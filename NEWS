@@ -1,10 +1,16 @@
+CHANGES IN gtools 2.2.3
+-----------------------
+
+ - setTCPNoDelay now compiles & works properly on Windows
+
+
 CHANGES IN gtools 2.2.2
 -----------------------
 
- -  src/setTCPNoDelay.c: Add C source code for setTCPNoDelay.
+ - src/setTCPNoDelay.c: Add C source code for setTCPNoDelay.
 
- -  NAMESPACE: Add UseDynLib to NAMESPACE so the shared library gets
-	       properly loaded.
+ - NAMESPACE: Add UseDynLib to NAMESPACE so the shared library gets
+   properly loaded.
 
  - Updated Greg's email address. 
 
