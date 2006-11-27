@@ -41,7 +41,7 @@ setTCPNoDelay(socket, value=TRUE)
   Request for Comments 896, January 1984.
   \url{http://www.ietf.org/rfc/rfc0896.txt?number=896}
 }
-\author{Gregory R. Warnes \email{gregory.r.warnes@pfizer.com}}
+\author{Gregory R. Warnes \email{warnes@bst.rochester.edu}}
 \seealso{
   \code{\link[utils]{make.socket}},
   \code{\link[utils]{socketConnection}}

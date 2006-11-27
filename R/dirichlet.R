@@ -1,4 +1,4 @@
-# $Id: dirichlet.R,v 1.4 2005/06/09 14:20:28 nj7w Exp $
+# $Id: dirichlet.R 625 2005-06-09 14:20:30Z nj7w $
 
 # Posted by Ben Bolker to R-News on Fri Dec 15 2000
 # http://www.r-project.org/nocvs/mail/r-help/2000/3865.html

@@ -1,4 +1,4 @@
-% $Id: mixedsort.Rd,v 1.6 2005/12/01 16:50:14 nj7w Exp $
+% $Id: mixedsort.Rd 977 2006-08-02 22:21:49Z warnes $
 %
 \name{mixedsort}
 \alias{mixedsort}
@@ -36,7 +36,7 @@ mixedsort(x)
   \code{mixedorder} returns a vector giving the sort order of the input
   elements. \code{mixedsort} returns the sorted vector.
 }
-\author{ Gregory R. Warnes \email{gregory.r.warnes@pfizer.com} }
+\author{ Gregory R. Warnes \email{warnes@bst.rochester.edu} }
 \seealso{ \code{\link[base]{sort}}, \code{\link[base]{order}} }
 \examples{
 # compound & dose labels
@@ -64,4 +64,7 @@ mixedsort(x)
 \keyword{univar}
 \keyword{manip}
 
+
+\concept{natural sort}
+\concept{dictionary sort}
 

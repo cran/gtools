@@ -1,4 +1,4 @@
-# $Id: running.R,v 1.12 2005/06/09 14:20:29 nj7w Exp $
+# $Id: running.R 1012 2006-11-14 22:25:06Z ggorjan $
 
 "running" <- function(X, Y=NULL,
                       fun=mean,

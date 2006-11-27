@@ -1,4 +1,4 @@
-# $Id: invalid.R,v 1.4 2005/06/09 14:20:29 nj7w Exp $
+# $Id: invalid.R 625 2005-06-09 14:20:30Z nj7w $
 
 invalid <- function(x)
   {

@@ -1,4 +1,4 @@
-% $Id: ELISA.Rd,v 1.3 2005/06/09 14:20:29 nj7w Exp $
+% $Id: ELISA.Rd 1012 2006-11-14 22:25:06Z ggorjan $
 %
 \name{ELISA}
 \docType{data}

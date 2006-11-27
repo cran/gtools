@@ -1,4 +1,4 @@
-# $Id: mixedsort.R,v 1.10 2005/06/13 17:08:41 nj7w Exp $
+# $Id: mixedsort.R 626 2005-06-13 17:08:41Z nj7w $
 
 mixedsort <- function(x) x[mixedorder(x)]
 

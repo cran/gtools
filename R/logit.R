@@ -1,4 +1,4 @@
-# $Id: logit.R,v 1.2 2005/06/09 14:20:29 nj7w Exp $
+# $Id: logit.R 625 2005-06-09 14:20:30Z nj7w $
 
 logit <- function(x, min=0, max=1)
   {

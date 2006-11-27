@@ -1,4 +1,4 @@
-% $Id: combinations.Rd,v 1.11 2005/12/01 16:50:14 nj7w Exp $
+% $Id: combinations.Rd 1012 2006-11-14 22:25:06Z ggorjan $
 %
 \name{combinations}
 \alias{combinations}
@@ -33,14 +33,14 @@ permutations(n, r, v=1:n, set=TRUE, repeats.allowed=FALSE)
   \code{options} command for details on how to do this.
 }
 \value{
-  Returns a matrix where each row contains a vector of length \code{n}.
+  Returns a matrix where each row contains a vector of length \code{r}.
 }
 \references{Venables, Bill.  "Programmers Note", R-News, Vol 1/1,
   Jan. 2001. \url{http://cran.r-project.org/doc/Rnews} }
 \author{ Original versions by Bill Venables
   \email{Bill.Venables@cmis.csiro.au}.  Extended to handle
   \code{repeats.allowed} by Gregory R. Warnes
-  \email{gregory.r.warnes@pfizer.com}.
+  \email{warnes@bst.rochester.edu}.
   }
 \seealso{ \code{\link[base]{choose}}, \code{\link[base]{options}} }
 \examples{

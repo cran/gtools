@@ -1,4 +1,4 @@
-# $Id: combinations.R,v 1.7 2005/06/09 14:20:28 nj7w Exp $
+# $Id: combinations.R 1012 2006-11-14 22:25:06Z ggorjan $
 #
 
 ##

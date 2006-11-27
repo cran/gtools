@@ -1,11 +1,19 @@
-CHANGES IN gtools 2.2.3
------------------------
+gtools 2.3.0
+------------
+
+- Update email address for Greg
+
+- Add new 'smartbind' function, which combines data frames
+  efficiently, even if they have different column names.
+
+gtools 2.2.3
+------------
 
  - setTCPNoDelay now compiles & works properly on Windows
 
 
-CHANGES IN gtools 2.2.2
------------------------
+gtools 2.2.2
+------------
 
  - src/setTCPNoDelay.c: Add C source code for setTCPNoDelay.
 
@@ -14,8 +22,8 @@ CHANGES IN gtools 2.2.2
 
  - Updated Greg's email address. 
 
-CHANGES IN gtools 2.2.1
------------------------
+gtools 2.2.1
+------------
 
   - New function 'addLast' that adds functions to R's .Last() so
     that they will be executed when R is terminating.
@@ -23,8 +31,8 @@ CHANGES IN gtools 2.2.1
   - New function setTCPNoDelay() that allows the TCP_NODELAY flag to
     be changed on socket objects.
 
-CHANGES IN gtools 2.1.0
------------------------
+gtools 2.1.0
+------------
 
  - Added assert.R (and documentation)
 

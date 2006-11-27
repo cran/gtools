@@ -1,6 +1,6 @@
-# $Id: RSCompat.S,v 1.9 2005/06/09 14:20:28 nj7w Exp $
+# $Id: RSCompat.S 625 2005-06-09 14:20:30Z nj7w $
 #
-# $Log: RSCompat.S,v $
+# $Log$
 # Revision 1.9  2005/06/09 14:20:28  nj7w
 # Updating the version number, and various help files to synchronize splitting of gregmisc bundle in 4 individual components.
 #
