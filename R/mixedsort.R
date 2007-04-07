@@ -1,4 +1,4 @@
-# $Id: mixedsort.R 626 2005-06-13 17:08:41Z nj7w $
+# $Id: mixedsort.R 1087 2007-04-07 13:41:51Z warnes $
 
 mixedsort <- function(x) x[mixedorder(x)]
 
@@ -45,7 +45,7 @@ mixedorder <- function(x)
     ####
 
     # find and mark numbers in the form of +1.23e+45.67
-    delimited <- gsub("([+-]{0,1}[0-9\.]+([eE][\+\-]{0,1}[0-9\.]+){0,1})",
+    delimited <- gsub("([+-]{0,1}[0-9\\.]+([eE][\\+\\-]{0,1}[0-9\\.]+){0,1})",
                       paste(delim,"\\1",delim,sep=""), x)
 
     # separate out numbers

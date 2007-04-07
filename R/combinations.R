@@ -1,4 +1,4 @@
-# $Id: combinations.R 1012 2006-11-14 22:25:06Z ggorjan $
+# $Id: combinations.R 1083 2007-03-23 22:53:00Z warnes $
 #
 
 ##
@@ -62,8 +62,8 @@ permutations <- function(n, r, v = 1:n, set = TRUE, repeats.allowed=FALSE)
      || r < 1 || (r %% 1) != 0) stop("bad value of r") 
   if(!is.atomic(v) || length(v) < n) 
     stop("v is either non-atomic or too short")
-  if( (r > n) ) #& repeats.allowed==FALSE)
-    stop("r > n") # and repeats.allowed=FALSE")
+  if( (r > n) & repeats.allowed==FALSE)
+    stop("r > n and repeats.allowed=FALSE")
   if(set) {
     v <- unique(sort(v))
     if (length(v) < n) stop("too few different elements")
