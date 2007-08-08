@@ -1,3 +1,15 @@
+gtools 2.4.0
+------------
+
+- Add binsearch() function, previously in the genetics() package.  
+
+
+gtoosl 2.3.1
+------------
+
+- Add ask() function to prompt the user and collect a single response.
+
+
 gtools 2.3.0
 ------------
 

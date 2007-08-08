@@ -1,3 +1,54 @@
+2007-08-08 13:48  warnes
+
+	* DESCRIPTION, NAMESPACE, NEWS, R/binsearch.R, man/binsearch.Rd:
+	  Add the binsearch(), previously in the genetics package.
+
+2007-07-18 11:48  ggorjan
+
+	* man/combinations.Rd: typo fixed
+
+2007-04-12 21:16  warnes
+
+	* NAMESPACE, NEWS, R/ask.R, man/ask.Rd: Add ask() function to
+	  prompt the user and collect a single response.
+
+2007-04-07 13:41  warnes
+
+	* DESCRIPTION, R/mixedsort.R: Fix improper escapes in regexp
+	  detected by R 2.5.0 package check.
+
+2007-03-23 22:53  warnes
+
+	* R/combinations.R: Allow permutations for r>n provided
+	  repeats.allowed=TRUE
+
+2006-11-28 00:53  warnes
+
+	* man/smartbind.Rd: Replace F with FALSE in smartbind example.
+
+2006-11-27 22:42  warnes
+
+	* man/smartbind.Rd: Replace T with TRUE in smartbind example
+
+2006-11-27 21:40  warnes
+
+	* data/ELISA.rda: Temprary remove to reset binary flag
+
+2006-11-27 21:40  warnes
+
+	* data/ELISA.rda: Temprary remove to reset binary flag
+
+2006-11-27 21:34  warnes
+
+	* DESCRIPTION, NAMESPACE, NEWS, R/smartbind.R, man/smartbind.Rd:
+	  Add smartbind() to list of exported functions, and add
+	  corresponding
+	  documentation file.
+
+2006-11-27 20:52  warnes
+
+	* DESCRIPTION: Update my email address
+
 2006-11-14 22:25  ggorjan
 
 	* trunk/gdata/man/combine.Rd, trunk/gdata/man/frameApply.Rd,
