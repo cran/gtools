@@ -1,10 +1,32 @@
+gtools 2.5.0
+------------
+
+New features:
+
+- Add checkRVersion() function to determin if a newer version of R is
+  available. 
+
+- Deprecated assert() in favor of base::stopifnot
+
+Bug fixes:
+
+- Fix bug in binsearch() identified by 2.6.0 R CMD CHECK
+
+Other changes:
+
+- Improve text explanation of how defmacro() and strmacro() differ from
+  function().
+
+- Update definitions of odd() and even() to use modulus operator
+  instead of division. 
+
 gtools 2.4.0
 ------------
 
 - Add binsearch() function, previously in the genetics() package.  
 
 
-gtoosl 2.3.1
+gtools 2.3.1
 ------------
 
 - Add ask() function to prompt the user and collect a single response.

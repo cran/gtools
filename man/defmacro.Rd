@@ -22,13 +22,13 @@ strmacro(..., expr, strexpr)
   given in \code{expr}, with formal arguments given by the other
   elements of the argument list.
 
-  A macro is similar to a function definition, the arguments are
-  handled.  In a function, formal arguments are simply variables that 
-  contains the result of evaluating the expressions provided to the
-  function call.  In contrast, macros actually modify the macro body by
-  \code{replacing} each formal argument by the expression
-  (\code{defmacro}) or string (\code{strmacro}) provided to the macro
-  call.
+  A macro is similar to a function definition except for handling of
+  formal arguments.  In a function, formal arguments are simply
+  variables that contains the result of evaluating the expressions
+  provided to the function call.  In contrast, macros actually modify
+  the macro body by \emph{replacing} each formal argument by the
+  expression (\code{defmacro}) or string (\code{strmacro}) provided to
+  the macro call.
 
   For \code{defmacro}, the special argument name \code{DOTS} will be
   replaced by \code{...} in the formal argument list of the macro so

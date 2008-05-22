@@ -1,5 +1,5 @@
-# $Id: oddeven.R 625 2005-06-09 14:20:30Z nj7w $
+# $Id: oddeven.R 1228 2007-11-30 18:05:43Z warnes $
 
 # detect odd/even integers
-odd <- function(x) x!=as.integer(x/2)*2
-even <- function(x) x==as.integer(x/2)*2
+odd <- function(x) x %% 2 == 1
+even <- function(x) x %% 2 == 0 

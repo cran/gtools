@@ -6,6 +6,7 @@ export(
        assert,
        binsearch,
        capture,
+       checkRVersion,
        combinations,
        ddirichlet,
        defmacro,
