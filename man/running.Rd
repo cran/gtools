@@ -1,4 +1,4 @@
-% $Id: running.Rd 977 2006-08-02 22:21:49Z warnes $
+% $Id: running.Rd 1325 2009-05-09 03:13:19Z warnes $
 %
 \name{running}
 \alias{running}
@@ -55,7 +55,7 @@ running(X, Y=NULL, fun=mean, width=min(length(X), 20),
   Note that this function will create a vector or matrix even for
   objects which are not simplified by \code{sapply}.
 }
-\author{ Gregory R. Warnes \email{warnes@bst.rochester.edu},
+\author{ Gregory R. Warnes \email{greg@random-technologies-llc.com},
          with contributions by Nitin Jain \email{nitin.jain@pfizer.com}.}
 \seealso{ \code{\link[gplots]{wapply}} to apply a function over an x-y window
   centered at each x point, \code{\link[base]{sapply}},

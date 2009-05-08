@@ -1,4 +1,4 @@
-% $Id: foldchange.Rd 977 2006-08-02 22:21:49Z warnes $
+% $Id: foldchange.Rd 1325 2009-05-09 03:13:19Z warnes $
 %
 \name{foldchange}
 \alias{foldchange}
@@ -37,7 +37,7 @@ foldchange2logratio(foldchange, base=2)
   A vector or matrix of the same dimensions as the input containing the
   converted values.
 }
-\author{ Gregory R. Warnes \email{warnes@bst.rochester.edu} }
+\author{ Gregory R. Warnes \email{greg@random-technologies-llc.com} }
 \examples{
 
   a <- 1:21

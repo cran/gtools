@@ -26,8 +26,6 @@ setTCPNoDelay(socket, value=TRUE)
   This function allows this feature to be disabled (de-Nagling,
   \code{value=TRUE}) or enabled (Nagling, \code{value=FALSE}) for the
   specified socket.
-  }
-
 }
 \value{
   The character string "SUCCESS" will be returned invisible if the
@@ -41,7 +39,7 @@ setTCPNoDelay(socket, value=TRUE)
   Request for Comments 896, January 1984.
   \url{http://www.ietf.org/rfc/rfc0896.txt?number=896}
 }
-\author{Gregory R. Warnes \email{warnes@bst.rochester.edu}}
+\author{Gregory R. Warnes \email{greg@random-technologies-llc.com}}
 \seealso{
   \code{\link[utils]{make.socket}},
   \code{\link[utils]{socketConnection}}

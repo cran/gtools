@@ -1,4 +1,4 @@
-% $Id: dirichlet.Rd 977 2006-08-02 22:21:49Z warnes $
+% $Id: dirichlet.Rd 1325 2009-05-09 03:13:19Z warnes $
 %
 \name{rdirichlet}
 \alias{rdirichlet}
@@ -36,7 +36,7 @@ ddirichlet(x, alpha)
   \url{http://www.r-project.org/nocvs/mail/r-help/2000/3865.html}.  Ben 
   attributed the code to Ian Wilson \email{i.wilson@maths.abdn.ac.uk}.
   Subsequent modifications by Gregory R. Warnes
-  \email{warnes@bst.rochester.edu}.
+  \email{greg@random-technologies-llc.com}.
 }
 \seealso{ \code{\link{dbeta}}, \code{\link{rbeta}} }
 \examples{

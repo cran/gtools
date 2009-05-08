@@ -60,11 +60,11 @@ strmacro(..., expr, strexpr)
 \references{
   The original \code{defmacro} code was directly taken from:
 
-  Lumley T. "Programmer's Niche: Macros in {R}", R News, 2001, Vol 1,
+  Lumley T. "Programmer's Niche: Macros in R", R News, 2001, Vol 1,
   No. 3, pp 11--13, \url{http://CRAN.R-project.org/doc/Rnews/}
 }
 \author{ Thomas Lumley wrote \code{defmacro}.  Gregory R. Warnes
-  \email{warnes@bst.rochester.edu} enhanced it and created
+  \email{greg@random-technologies-llc.com} enhanced it and created
   \code{strmacro}.
 }
 \seealso{

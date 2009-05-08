@@ -1,9 +1,9 @@
-% $Id: quantcut.Rd 977 2006-08-02 22:21:49Z warnes $
+% $Id: quantcut.Rd 1325 2009-05-09 03:13:19Z warnes $
 %
 \name{quantcut}
 \alias{quantcut}
 
-\title{ Create a Factor Variable Using the Quantiles of a Continuous Variable}}
+\title{ Create a Factor Variable Using the Quantiles of a Continuous Variable}
 \description{
   Create a factor variable using the quantiles of a continous variable.
 }
@@ -34,7 +34,7 @@ quantcut(x, q=seq(0,1,by=0.25), na.rm=TRUE, ...)
   Factor variable with one level for each quantile interval given by \code{q}.
 }
 
-\author{Gregory R. Warnes \email{warnes@bst.rochester.edu}}
+\author{Gregory R. Warnes \email{greg@random-technologies-llc.com}}
 
 \seealso{ \code{\link{cut}}, \code{\link{quantile}} }
 

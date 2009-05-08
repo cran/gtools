@@ -41,7 +41,7 @@ binsearch(fun, range, ..., target = 0, lower = ceiling(min(range)),
   and the function value at both are returned.
 
   Note that when the specified target value falls between integers, the
-  \em{two} closest values are returned.  If the specified target falls
+  \emph{two} closest values are returned.  If the specified target falls
   outside of the specified \code{range}, the closest endpoint of the
   range will be returned, and an warning message will be generated.  If
   the maximum number if iterations was reached, the endpoints of the
@@ -60,7 +60,7 @@ binsearch(fun, range, ..., target = 0, lower = ceiling(min(range)),
     \code{where}.}
 }
 %\references{ ~put references to the literature/web site here ~ }
-\author{Gregory R. Warnes \email{warnes@bst.rochester.edu} }
+\author{Gregory R. Warnes \email{greg@random-technologies-llc.com} }
 \note{This function often returns two values for \code{where} and
   \code{value}.  Be sure to check the \code{flag} parameter to see what
   these values mean.}

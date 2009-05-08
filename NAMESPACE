@@ -15,6 +15,7 @@ export(
        foldchange2logratio,
        inv.logit,
        invalid,
+       keywords,
        logit,
        logratio2foldchange,
        mixedorder,

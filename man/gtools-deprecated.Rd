@@ -19,6 +19,6 @@ assert(FLAG)
   \code{assert} is a deprecated synonym for \code{\link[base]{stopifnot}}.
 }
 \seealso{
-  \code{\link{Deprecated}} }
+  \code{\link{Deprecated}}
 }
 \keyword{misc}
