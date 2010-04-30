@@ -41,8 +41,8 @@ setTCPNoDelay(socket, value=TRUE)
 }
 \author{Gregory R. Warnes \email{greg@random-technologies-llc.com}}
 \seealso{
-  \code{\link[utils]{make.socket}},
-  \code{\link[utils]{socketConnection}}
+  \code{\link{make.socket}},
+  \code{\link{socketConnection}}
   }
 \examples{
 \dontrun{

@@ -64,8 +64,8 @@ binsearch(fun, range, ..., target = 0, lower = ceiling(min(range)),
 \note{This function often returns two values for \code{where} and
   \code{value}.  Be sure to check the \code{flag} parameter to see what
   these values mean.}
-\seealso{ \code{\link[base]{optim}}, \code{\link[base]{optimize}},
-  \code{\link[base]{uniroot}} }
+\seealso{ \code{\link{optim}}, \code{\link{optimize}},
+  \code{\link{uniroot}} }
 \examples{
 
 ### Toy examples

@@ -33,7 +33,7 @@ sprint(x,...)
 \author{Gregory R. Warnes \email{greg@random-technologies-llc.com} }
 \seealso{
   \code{\link[session]{texteval}},
-  \code{\link[base]{capture.output}}
+  \code{\link{capture.output}}
 }
 \examples{
 

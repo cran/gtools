@@ -1,6 +1,6 @@
 #include <R.h>
 #include <Rinternals.h>
-
+ 
 # include <sys/types.h>
 
 #ifdef WIN32
@@ -97,7 +97,7 @@ void R_setTCPNoDelay(int *socket,
                        sizeof ( off )
                        );
 
-
+ 
   checkStatus(*status, status_str[0], *status_len);
   
   return;

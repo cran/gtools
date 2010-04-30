@@ -39,7 +39,7 @@ quantcut <- function(x, q=seq(0,1,by=0.25), na.rm=TRUE, ... )
           sapply(x,
                  function(y) if(length(y)==2) y[c(2,2)] else y[2:3]
                  )
-        pairs <- mkpairs(strsplit(levs, '[^0-9+\\.\\-]+', extended=TRUE))
+        pairs <- mkpairs(strsplit(levs, '[^0-9+\\.\\-]+'))
         rownames(pairs) <- c("lower.bound","upper.bound")
         colnames(pairs) <- levs
         
