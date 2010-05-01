@@ -1,3 +1,37 @@
+2010-05-01 22:14  warnes
+
+	* [r1434] DESCRIPTION: Update version number for new release
+
+2010-05-01 22:03  warnes
+
+	* [r1433] DESCRIPTION, man/addLast.Rd, man/ask.Rd,
+	  man/binsearch.Rd, man/capture.Rd, man/combinations.Rd,
+	  man/defmacro.Rd, man/dirichlet.Rd, man/foldchange.Rd,
+	  man/invalid.Rd, man/keywords.Rd, man/logit.Rd, man/mixedsort.Rd,
+	  man/oddeven.Rd, man/permute.Rd, man/quantcut.Rd, man/running.Rd,
+	  man/scat.Rd, man/setTCPNoDelay.Rd, man/smartbind.Rd: Change
+	  Greg's email address to greg@warnes.net
+
+2010-05-01 21:59  warnes
+
+	* [r1432] R/checkRVersion.R: Fix error in checkRVersion()
+
+2010-04-28 17:23  ggrothendieck2
+
+	* [r1431] R/quantcut.R, R/strmacro.R, man/binsearch.Rd,
+	  man/capture.Rd, man/setTCPNoDelay.Rd: fixed problems with R CMD
+	  CHECK
+
+2009-05-09 03:35  warnes
+
+	* [r1328] man/keywords.Rd: Escape $ in .Rd file to avoid latex
+	  issues
+
+2009-05-09 03:26  warnes
+
+	* [r1327] ChangeLog, NEWS, inst/NEWS: Update NEWS and create
+	  softlinks for NEWS and ChangeLog in top level directory
+
 2009-05-09 03:15  warnes
 
 	* [r1326] NEWS, inst, inst/NEWS: Move actual NEWS file into inst.

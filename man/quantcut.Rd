@@ -1,4 +1,4 @@
-% $Id: quantcut.Rd 1325 2009-05-09 03:13:19Z warnes $
+% $Id: quantcut.Rd 1433 2010-05-01 22:03:03Z warnes $
 %
 \name{quantcut}
 \alias{quantcut}
@@ -34,7 +34,7 @@ quantcut(x, q=seq(0,1,by=0.25), na.rm=TRUE, ...)
   Factor variable with one level for each quantile interval given by \code{q}.
 }
 
-\author{Gregory R. Warnes \email{greg@random-technologies-llc.com}}
+\author{Gregory R. Warnes \email{greg@warnes.net}}
 
 \seealso{ \code{\link{cut}}, \code{\link{quantile}} }
 

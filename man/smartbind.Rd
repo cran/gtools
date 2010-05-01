@@ -22,7 +22,7 @@ smartbind(...)
   character strings.  The user will need to coerce such character
   columns into an appropriate type.
 }
-\author{Gregory R. Warnes \email{greg@random-technologies-llc.com}}
+\author{Gregory R. Warnes \email{greg@warnes.net}}
 \seealso{ \code{\link{rbind}}, \code{\link{cbind}} }
 \examples{
 

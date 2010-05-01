@@ -9,7 +9,7 @@ checkRVersion <- function(quiet=FALSE)
         if(!quiet)
           {
             cat("A newer version of R is now available: ")
-            cat(max(versionList))
+            cat(as.character(max(versionList)))
             cat("\n")
           }
         invisible( max(versionList) )
@@ -19,7 +19,7 @@ checkRVersion <- function(quiet=FALSE)
         if(!quiet)
           {
             cat("The latest version of R is installed: ")
-            cat(as.character(getRversion()))
+            cat(as.character(max(versionList)))
             cat("\n")
           }
         invisible( NULL );

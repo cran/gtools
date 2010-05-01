@@ -18,7 +18,7 @@ ask(msg = "Press <RETURN> to continue: ")
 \value{
   A character scalar containing the input providede by the user.
 }
-\author{Gregory R. Warnes \email{greg@random-technologies-llc.com}}
+\author{Gregory R. Warnes \email{greg@warnes.net}}
 \seealso{ \code{\link{readLines}}, \code{\link{scan}} }
 \examples{
 

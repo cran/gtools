@@ -64,7 +64,7 @@ strmacro(..., expr, strexpr)
   No. 3, pp 11--13, \url{http://CRAN.R-project.org/doc/Rnews/}
 }
 \author{ Thomas Lumley wrote \code{defmacro}.  Gregory R. Warnes
-  \email{greg@random-technologies-llc.com} enhanced it and created
+  \email{greg@warnes.net} enhanced it and created
   \code{strmacro}.
 }
 \seealso{

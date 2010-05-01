@@ -1,4 +1,4 @@
-% $Id: oddeven.Rd 1325 2009-05-09 03:13:19Z warnes $
+% $Id: oddeven.Rd 1433 2010-05-01 22:03:03Z warnes $
 %
 \name{odd}
 \alias{odd}
@@ -17,7 +17,7 @@ even(x)
 \value{
   Vector of TRUE/FALSE values.
 }
-\author{ Gregory R. Warnes \email{greg@random-technologies-llc.com}}
+\author{ Gregory R. Warnes \email{greg@warnes.net}}
 \seealso{ \code{\link[base]{round}} }
 \examples{
 

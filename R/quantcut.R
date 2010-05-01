@@ -1,4 +1,4 @@
-# $Id: quantcut.R 625 2005-06-09 14:20:30Z nj7w $
+# $Id: quantcut.R 1431 2010-04-28 17:23:08Z ggrothendieck2 $
 
 quantcut <- function(x, q=seq(0,1,by=0.25), na.rm=TRUE, ... )
   {
