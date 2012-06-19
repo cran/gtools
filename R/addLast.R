@@ -1,16 +1,16 @@
 addLast <- function( fun )
   {
     if (!is.function(fun)) stop("fun must be a function")
-    if(!exists(".Last", env=.GlobalEnv))
-      assign(".Last", fun, env=.GlobalEnv)
+    if(!exists(".Last", envir=.GlobalEnv))
+      assign(".Last", fun, envir=.GlobalEnv)
     else
       {
-        Last <- get(".Last", env=.GlobalEnv)
+        Last <- get(".Last", envir=.GlobalEnv)
         newfun <- function(...)
           {
             fun()
             Last()
           }
-        assign(".Last", newfun, env=.GlobalEnv)
+        assign(".Last", newfun, envir=.GlobalEnv)
       }
   }

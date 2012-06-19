@@ -1,3 +1,27 @@
+gtools 2.7.0 - 2012-06-19
+-------------------------
+
+New features:
+
+- smartbind() has a new 'sep' argument to allow specification of the
+  character(s) used to separate components of constructed column names
+
+- smartbind() has a new 'verbose' argument to provide details on how
+  coluumns are being processed
+
+Bug fixes:
+
+- smartbind() has been enhanced to improve handling of factor and
+  ordered factor columns.
+
+
+gtools 2.6.2 - 2011-09-28
+-------------------------
+
+New features:
+
+- Add 'fill' argument to smartbind() to specify a value to use for
+  missing entries.
 
 gtools 2.6.1
 ------------

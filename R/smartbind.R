@@ -2,11 +2,8 @@
 ## Function to do rbind of data frames quickly, even if the columns don't match
 ##
 
-smartbind <- function(...)
+smartbind <- function(..., fill=NA, sep=':', verbose=FALSE)
   {
-    verbose <- FALSE
-    
-    
     data <- list(...)
     if(is.null(names(data)))
       names(data) <- as.character(1:length(data))
@@ -15,7 +12,7 @@ smartbind <- function(...)
                    if(is.matrix(x) || is.data.frame(x))
                      x
                    else
-                     data.frame(as.list(x))
+                     data.frame(as.list(x), check.names=FALSE)
                    )
 
     #retval <- new.env()
@@ -26,37 +23,141 @@ smartbind <- function(...)
     rowNameList <- unlist(lapply( names(data),
                                  function(x) 
                                    if(rowLens[x]<=1) x
-                                   else paste(x, seq(1,rowLens[x]),sep='.'))
+                                   else paste(x, seq(1,rowLens[x]),sep=sep))
                           )
 
+    colClassList     <- vector(mode="list", length=length(data))
+    factorColumnList <- vector(mode="list", length=length(data))
+    factorLevelList  <- vector(mode="list", length=length(data))
+    
        
-    start <- 1
+    start      <- 1
+    blockIndex <- 1
     for(block in data)
       {
-        if(verbose) print(block)
+        colClassList    [[blockIndex]] <- list()
+        factorColumnList[[blockIndex]] <- character(length=0)
+        factorLevelList [[blockIndex]] <- list()
+        
+        if(verbose) print(head(block))
         end <- start+nrow(block)-1
         for(col in colnames(block))
           {
+            classVec <- class(block[,col])
+
+            ## store class and factor level information for later use
+            colClassList[[blockIndex]][[col]] <- classVec
+            if("factor" %in% classVec)
+              {
+                
+                factorColumnList[[blockIndex]] <-
+                  c(factorColumnList[[blockIndex]], col)
+                
+                factorLevelList[[blockIndex]][[col]] <-
+                  levels(block[,col])
+            }
+            
             if( !(col %in% names(retval)))
               {
                 if(verbose) cat("Start:", start,
                                 "  End:", end,
                                 "  Column:", col,
                                 "\n", sep="")
-                if(class(block[,col])=="factor")
-                  newclass <- "character"
+                if ("factor" %in% classVec)
+                  {
+                    newclass <- "character"
+                  }
                 else
-                  newclass <- class(block[,col])
-                retval[[col]] <- as.vector(rep(NA,nrows), mode=newclass)
+                  newclass <- classVec
+                
+                retval[[col]] <- as.vector(rep(fill,nrows), mode=newclass)
               }
             
             retval[[col]][start:end] <- as.vector(block[,col],
                                                   mode=class(retval[[col]]))
           }
         start <- end+1
+        blockIndex <- blockIndex+1
       }
 
-    #retval <- as.list(retval)
+    all.equal.or.null <- function(x,y,...)
+      {
+        if(is.null(x) || is.null(y) )
+          return(TRUE)
+        else
+          return(all.equal(x,y,...))
+      }
+    
+    ## Handle factors, merging levels
+    for( col in unique(unlist(factorColumnList)) )
+      {
+        ## Ensure column classes match across blocks
+        colClasses <- lapply(colClassList, function(x) x[[col]])
+        allSame <- all(sapply(colClasses[-1],
+                              function(x) isTRUE(all.equal.or.null(colClasses[[1]], x))
+                              )
+                       )
+
+        if(allSame)
+          colClass <- colClasses[[1]]
+        else
+          {
+            warning("Column class mismatch for '", col, "'. ",
+                    "Converting column to class 'character'.")
+            next()
+          }
+        
+
+        ## check if factor levels are all the same
+        colLevels <- lapply(factorLevelList, function(x) x[[col]])
+        allSame <- all(sapply(colLevels[-1],
+                              function(x) isTRUE(all.equal.or.null(colLevels[[1]], x))
+                              )
+                       )
+
+        
+        if(allSame)
+          {
+            if("ordered" %in% colClass)
+              retval[[col]] <- ordered(retval[[col]], levels=colLevels[[1]] )
+            else
+              retval[[col]] <- factor(retval[[col]], levels=colLevels[[1]] )
+          }
+        else
+          {
+            ## Check if longest set of levels is a superset of all others,
+            ## and use that one
+            longestIndex  <- which.max( sapply(colLevels, length) )
+            longestLevels <- colLevels[[longestIndex]] 
+            allSubset <- sapply(colLevels[-longestIndex],
+                                function(l) all(l %in% longestLevels)
+                                )
+            if(allSubset)
+              {
+                if("ordered" %in% colClass)
+                  retval[[col]] <- ordered(retval[[col]], levels=longestLevels )
+                else
+                  retval[[col]] <- factor(retval[[col]], levels=longestLevels )
+              }
+            else
+              {
+                # form superset by appending to longest level set
+                levelSuperSet <- unique(c(longestLevels, unlist(colLevels)))
+                retval[[col]] <- factor(retval[[col]], levels=levelSuperSet )
+                
+                if(length(colClass)>1) # not just plain factor
+                   {
+                     browser()
+                    warning( "column '", col, "' of class ",
+                            paste("'", colClass, "'", collapse=":",
+                                  sep="'"),
+                            " converted to class 'factor'. Check level ordering." )
+                  }
+
+              }
+          }
+      }
+    
     attr(retval,"row.names") <- rowNameList
     class(retval) <- "data.frame"
     return(retval)
