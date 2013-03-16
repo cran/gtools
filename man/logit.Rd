@@ -43,7 +43,9 @@ inv.logit(x, min = 0, max = 1)
   Transformed value(s).
 }
 \author{ Gregory R. Warnes \email{greg@warnes.net} }
-\seealso{ \code{\link[car]{logit}}, \code{\link[moc]{inv.glogit}} }
+\seealso{ \code{\link[car]{logit}}
+  %, \code{\link[moc]{inv.glogit}}
+}
 \examples{
 
   x <- seq(0,10, by=0.25)

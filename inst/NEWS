@@ -1,3 +1,11 @@
+gtools 2.7.1 - 2013-03-17
+-------------------------
+
+Bug fixes:
+
+- smartbind() was not properly handling factor columns when the first
+  data frame did not include the relevant column.
+
 gtools 2.7.0 - 2012-06-19
 -------------------------
 
@@ -32,7 +40,7 @@ New features:
   available R versions.
 
 - Add keywords() function to show $RHOME/doc/KEYWORDS file
- 
+
 Bug fixes:
 
 - Correct windows make flags as suggested by Brian Ripley.
@@ -46,7 +54,7 @@ gtools 2.5.0
 New features:
 
 - Add checkRVersion() function to determin if a newer version of R is
-  available. 
+  available.
 
 - Deprecated assert() in favor of base::stopifnot
 
@@ -60,12 +68,12 @@ Other changes:
   function().
 
 - Update definitions of odd() and even() to use modulus operator
-  instead of division. 
+  instead of division.
 
 gtools 2.4.0
 ------------
 
-- Add binsearch() function, previously in the genetics() package.  
+- Add binsearch() function, previously in the genetics() package.
 
 
 gtools 2.3.1
@@ -96,7 +104,7 @@ gtools 2.2.2
  - NAMESPACE: Add UseDynLib to NAMESPACE so the shared library gets
    properly loaded.
 
- - Updated Greg's email address. 
+ - Updated Greg's email address.
 
 gtools 2.2.1
 ------------
@@ -113,7 +121,7 @@ gtools 2.1.0
  - Added assert.R (and documentation)
 
  - Added the defmacro() function, extracted from Lumley T. "Programmer's Niche:
-   Macros in {R}", R News, 2001, Vol 1, No. 3, pp 11--13, 
+   Macros in {R}", R News, 2001, Vol 1, No. 3, pp 11--13,
    \url{http://CRAN.R-project.org/doc/Rnews/}
 
  - Added DESCRIPTION and removed DESCRIPTION.in

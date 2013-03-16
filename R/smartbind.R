@@ -19,9 +19,9 @@ smartbind <- function(..., fill=NA, sep=':', verbose=FALSE)
     retval <- list()
     rowLens <- unlist(lapply(data, nrow))
     nrows <- sum(rowLens)
-    
+
     rowNameList <- unlist(lapply( names(data),
-                                 function(x) 
+                                 function(x)
                                    if(rowLens[x]<=1) x
                                    else paste(x, seq(1,rowLens[x]),sep=sep))
                           )
@@ -29,8 +29,8 @@ smartbind <- function(..., fill=NA, sep=':', verbose=FALSE)
     colClassList     <- vector(mode="list", length=length(data))
     factorColumnList <- vector(mode="list", length=length(data))
     factorLevelList  <- vector(mode="list", length=length(data))
-    
-       
+
+
     start      <- 1
     blockIndex <- 1
     for(block in data)
@@ -38,7 +38,7 @@ smartbind <- function(..., fill=NA, sep=':', verbose=FALSE)
         colClassList    [[blockIndex]] <- list()
         factorColumnList[[blockIndex]] <- character(length=0)
         factorLevelList [[blockIndex]] <- list()
-        
+
         if(verbose) print(head(block))
         end <- start+nrow(block)-1
         for(col in colnames(block))
@@ -49,14 +49,14 @@ smartbind <- function(..., fill=NA, sep=':', verbose=FALSE)
             colClassList[[blockIndex]][[col]] <- classVec
             if("factor" %in% classVec)
               {
-                
+
                 factorColumnList[[blockIndex]] <-
                   c(factorColumnList[[blockIndex]], col)
-                
+
                 factorLevelList[[blockIndex]][[col]] <-
                   levels(block[,col])
             }
-            
+
             if( !(col %in% names(retval)))
               {
                 if(verbose) cat("Start:", start,
@@ -69,10 +69,10 @@ smartbind <- function(..., fill=NA, sep=':', verbose=FALSE)
                   }
                 else
                   newclass <- classVec
-                
+
                 retval[[col]] <- as.vector(rep(fill,nrows), mode=newclass)
               }
-            
+
             retval[[col]][start:end] <- as.vector(block[,col],
                                                   mode=class(retval[[col]]))
           }
@@ -87,48 +87,53 @@ smartbind <- function(..., fill=NA, sep=':', verbose=FALSE)
         else
           return(all.equal(x,y,...))
       }
-    
+
     ## Handle factors, merging levels
     for( col in unique(unlist(factorColumnList)) )
       {
         ## Ensure column classes match across blocks
         colClasses <- lapply(colClassList, function(x) x[[col]])
-        allSame <- all(sapply(colClasses[-1],
-                              function(x) isTRUE(all.equal.or.null(colClasses[[1]], x))
+        firstNotNull <- which(!sapply(colClasses, is.null))[1]
+        allSameOrNull <- all(sapply(colClasses[-firstNotNull],
+                              function(x) isTRUE(all.equal.or.null(colClasses[[firstNotNull]], x))
                               )
                        )
 
-        if(allSame)
-          colClass <- colClasses[[1]]
+        if(allSameOrNull)
+          {
+            # grab the first *non-NULL* class information
+            colClass <- colClasses[[firstNotNull]]
+          }
         else
           {
             warning("Column class mismatch for '", col, "'. ",
                     "Converting column to class 'character'.")
             next()
           }
-        
+
 
         ## check if factor levels are all the same
         colLevels <- lapply(factorLevelList, function(x) x[[col]])
-        allSame <- all(sapply(colLevels[-1],
-                              function(x) isTRUE(all.equal.or.null(colLevels[[1]], x))
-                              )
-                       )
+        firstNotNull <- which(!sapply(colLevels, is.null))[1]
+        allSameOrNull <- all(sapply(colLevels[-firstNotNull],
+                                    function(x) isTRUE(all.equal.or.null(colLevels[[firstNotNull]], x))
+                                    )
+                             )
 
-        
-        if(allSame)
+
+        if(allSameOrNull)
           {
             if("ordered" %in% colClass)
-              retval[[col]] <- ordered(retval[[col]], levels=colLevels[[1]] )
+              retval[[col]] <- ordered(retval[[col]], levels=colLevels[[firstNotNull]] )
             else
-              retval[[col]] <- factor(retval[[col]], levels=colLevels[[1]] )
+              retval[[col]] <- factor(retval[[col]], levels=colLevels[[firstNotNull]] )
           }
         else
           {
             ## Check if longest set of levels is a superset of all others,
             ## and use that one
             longestIndex  <- which.max( sapply(colLevels, length) )
-            longestLevels <- colLevels[[longestIndex]] 
+            longestLevels <- colLevels[[longestIndex]]
             allSubset <- sapply(colLevels[-longestIndex],
                                 function(l) all(l %in% longestLevels)
                                 )
@@ -144,7 +149,7 @@ smartbind <- function(..., fill=NA, sep=':', verbose=FALSE)
                 # form superset by appending to longest level set
                 levelSuperSet <- unique(c(longestLevels, unlist(colLevels)))
                 retval[[col]] <- factor(retval[[col]], levels=levelSuperSet )
-                
+
                 if(length(colClass)>1) # not just plain factor
                    {
                      browser()
@@ -157,7 +162,7 @@ smartbind <- function(..., fill=NA, sep=':', verbose=FALSE)
               }
           }
       }
-    
+
     attr(retval,"row.names") <- rowNameList
     class(retval) <- "data.frame"
     return(retval)
