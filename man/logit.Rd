@@ -1,4 +1,4 @@
-% $Id: logit.Rd 1433 2010-05-01 22:03:03Z warnes $
+% $Id: logit.Rd 1695 2013-07-05 23:33:15Z warnes $
 %
 \name{logit}
 \alias{logit}
@@ -43,9 +43,7 @@ inv.logit(x, min = 0, max = 1)
   Transformed value(s).
 }
 \author{ Gregory R. Warnes \email{greg@warnes.net} }
-\seealso{ \code{\link[car]{logit}}
-  %, \code{\link[moc]{inv.glogit}}
-}
+\seealso{ \code{\link[car]{logit}} }
 \examples{
 
   x <- seq(0,10, by=0.25)

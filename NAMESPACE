@@ -16,6 +16,7 @@ export(
        inv.logit,
        invalid,
        keywords,
+       lastAdd,
        logit,
        logratio2foldchange,
        mixedorder,

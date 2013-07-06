@@ -1,3 +1,22 @@
+2013-07-06  warnes
+
+	* [r1699] R/addLast.R, man/addLast-deprecated.Rd, man/addLast.Rd,
+	  man/gtools-defunct.Rd, man/gtools-deprecated.Rd, man/lastAdd.Rd:
+	  Create new function lastAdd to replace addLast and mark addLast
+	  as deprecated.
+
+2013-07-05  warnes
+
+	* [r1698] inst/NEWS: Point out that addLast() modifies the value of
+	  .Last in the global environment.
+	* [r1697] man/addLast.Rd: Point out that addLast() modifies the
+	  value of .Last in the global environment.
+	* [r1696] DESCRIPTION, inst/NEWS: Update for gtools 2.7.2 mark 2
+	* [r1695] man/logit.Rd: Remove cross-reference to (obsolete?) moc
+	  package
+	* [r1694] DESCRIPTION, inst/NEWS: Update for gtools 2.7.2
+	* [r1693] R/checkRVersion.R: Update for R version 3.0.0 and later
+
 2013-03-17  warnes
 
 	* [r1640] R/smartbind.R: Fix error in smartbind: factor levels were
