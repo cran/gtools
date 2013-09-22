@@ -1,3 +1,19 @@
+gtools 3.1.0 - 2013-09-22
+-------------------------
+
+Major changes:
+
+- The function 'addLast()' (deprecated since gtools 3.0.0) is no
+  longer available, and has been marked defunct.
+
+Bug fixes:
+
+- Modified 'mixedorder()' to use Use 'suppressWarnings() instead of
+  'options(warn=-1)'.  This will avoid egregious warning messages when
+  called from within a nested environment, such as when run from
+  within 'knitr'
+
+
 gtools 3.0.0 - 2013-07-06
 -------------------------
 

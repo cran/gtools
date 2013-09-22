@@ -25,7 +25,7 @@ lastAdd(fun)
 }
 
 \note{
-  This function replaces the (now deprecated) \code{addLast} function.
+  This function replaces the (now defunct) \code{addLast} function.
 }
 \value{
   A new function to be used for \code{.Last}.

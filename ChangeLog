@@ -1,5 +1,25 @@
+2013-09-23  warnes
+
+	* [r1714] man/addLast-deprecated.Rd, man/gtools-defunct.Rd,
+	  man/gtools-deprecated.Rd, man/lastAdd.Rd: Make 'addLast()'
+	  defunct.
+	* [r1713] R/addLast.R, R/lastAdd.R: Mark 'addLast()' as defunct and
+	  move 'lastAdd()' function to a separate file.
+	* [r1712] DESCRIPTION, inst/NEWS: Update for gtools 3.0.1 release
+	* [r1711] R/mixedsort.R: Use 'suppressWarnings() instead of
+	  'options(warn=-1)' in 'mixedorder()'.
+
+2013-07-07  warnes
+
+	* [r1705] man/lastAdd.Rd: Fix typo.
+
 2013-07-06  warnes
 
+	* [r1704] man/lastAdd.Rd: Fix Rd warning.
+	* [r1703] NAMESPACE: Include lastAdd in NAMESPACE
+	* [r1702] R/deprecated.R: Change assert from deprecated to defunct.
+	* [r1701] R/addLast.R: Improve deprecation message
+	* [r1700] DESCRIPTION, inst/NEWS: Update for gtools 3.0.0
 	* [r1699] R/addLast.R, man/addLast-deprecated.Rd, man/addLast.Rd,
 	  man/gtools-defunct.Rd, man/gtools-deprecated.Rd, man/lastAdd.Rd:
 	  Create new function lastAdd to replace addLast and mark addLast

@@ -1,4 +1,4 @@
-# $Id: mixedsort.R 1451 2010-08-14 19:28:55Z warnes $
+# $Id: mixedsort.R 1711 2013-09-23 15:19:06Z warnes $
 
 mixedsort <- function(x) x[mixedorder(x)]
 
@@ -13,19 +13,12 @@ mixedorder <- function(x)
 
     numeric <- function(x)
       {
-        optwarn = options("warn")
-        on.exit( options(optwarn) )
-        options(warn=-1)
-        as.numeric(x)
+        suppressWarnings( as.numeric(x) )
       }
 
     nonnumeric <- function(x)
       {
-        optwarn = options("warn")
-        on.exit( options(optwarn) )
-        options(warn=-1)
-
-        ifelse(is.na(as.numeric(x)), toupper(x), NA)
+        suppressWarnings( ifelse(is.na(as.numeric(x)), toupper(x), NA) )
       }
 
 
