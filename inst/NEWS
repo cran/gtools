@@ -1,3 +1,12 @@
+gtools 3.1.1 - 2013-11-06
+-------------------------
+
+Bug fixes:
+
+- Fix problem with mixedorder/mixedsort when there is zero or one
+  elements in the argument vector.
+
+
 gtools 3.1.0 - 2013-09-22
 -------------------------
 

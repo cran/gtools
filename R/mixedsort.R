@@ -1,4 +1,4 @@
-# $Id: mixedsort.R 1711 2013-09-23 15:19:06Z warnes $
+# $Id: mixedsort.R 1745 2013-11-06 14:51:16Z warnes $
 
 mixedsort <- function(x) x[mixedorder(x)]
 
@@ -9,6 +9,11 @@ mixedorder <- function(x)
     # - Separately rank numbers and strings
     # - Combine orders so that strings follow numbers
 
+    if(length(x)<1)
+        return(NULL)
+    else if(length(x)==1)
+        return(1)
+      
     delim="\\$\\@\\$"
 
     numeric <- function(x)

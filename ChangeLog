@@ -1,5 +1,14 @@
+2013-11-06  warnes
+
+	* [r1745] R/mixedsort.R: Fix problem with mixedorder/mixedsort when
+	  there is only zero or one elements in the vector.
+
 2013-09-23  warnes
 
+	* [r1716] man/gtools-deprecated.Rd: Comment out empty sections in
+	  gtools-deprecated.Rd
+	* [r1715] DESCRIPTION, inst/NEWS: Update files for gtools 3.1.0
+	  release
 	* [r1714] man/addLast-deprecated.Rd, man/gtools-defunct.Rd,
 	  man/gtools-deprecated.Rd, man/lastAdd.Rd: Make 'addLast()'
 	  defunct.

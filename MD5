@@ -1,7 +1,7 @@
-7e4b1a82282b6f2c07dc955fa249295a *ChangeLog
-b910c12c3d2c3dd845db2e6e886aeacc *DESCRIPTION
+2fde3dd1792883afe6d7cebcfcf6f2b8 *ChangeLog
+1ea84db21153b206a346cc190ef59fa5 *DESCRIPTION
 6b878bdfaa0ca7b966646ed6a11710d1 *NAMESPACE
-0bd0fd33a5b516b9b1aa53464d4ea3fe *NEWS
+e4d0cc8abc172e456ec8f1b079a28494 *NEWS
 9eb418fd95aa09ba85aed159545dea61 *R/RSCompat.S
 a86a74ba04089ad58ea22e3a994a9b14 *R/addLast.R
 c4ae0d6b5867f6751981e9f93cd2f619 *R/ask.R
@@ -17,7 +17,7 @@ c089bb5f542501dc1e3ba07f032c84ed *R/dirichlet.R
 7865a5e9151b4e0dfe5336ab150afd45 *R/keywords.R
 f00dfc3263a5854151f244493b3f04d0 *R/lastAdd.R
 2bb525e1930ec3ba2afefa2ff43d74e0 *R/logit.R
-d72c9265c200ad631e8df654a0ca73d5 *R/mixedsort.R
+5fbeac9e36b2ac3a8bd52a61f0beac62 *R/mixedsort.R
 93a46a6ef5937bdd112468daceac00a6 *R/newVersionAvailable.R
 07cd779ab7e64f697604b8b4fa4c9d70 *R/oddeven.R
 1d016a924dd59daa78ea62d986da2929 *R/permute.R
@@ -28,8 +28,8 @@ e5ddc84d8a502feed32f7f6b1b5e25ab *R/setTCPNoDelay.R
 3d0ac64f38d5b91d4ef8adc2344d5875 *R/smartbind.R
 e8f510e73bd2cd820c384c00d75b0080 *R/strmacro.R
 d2d2d0444a049d74694203974624835c *data/ELISA.rda
-7e4b1a82282b6f2c07dc955fa249295a *inst/ChangeLog
-0bd0fd33a5b516b9b1aa53464d4ea3fe *inst/NEWS
+2fde3dd1792883afe6d7cebcfcf6f2b8 *inst/ChangeLog
+e4d0cc8abc172e456ec8f1b079a28494 *inst/NEWS
 904304f52b08ec847904ac2aa5be9aef *man/ELISA.Rd
 c5b7124f5fdbcc83f2e283314df95858 *man/ask.Rd
 ecbe8481bdcff0d8abd1a47cc64ca7b2 *man/binsearch.Rd
