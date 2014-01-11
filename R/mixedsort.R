@@ -1,4 +1,4 @@
-# $Id: mixedsort.R 1745 2013-11-06 14:51:16Z warnes $
+# $Id: mixedsort.R 1748 2013-11-26 14:38:58Z warnes $
 
 mixedsort <- function(x) x[mixedorder(x)]
 
@@ -13,7 +13,11 @@ mixedorder <- function(x)
         return(NULL)
     else if(length(x)==1)
         return(1)
-      
+
+    if( is.numeric(x) )
+        return( order(x) )
+
+    
     delim="\\$\\@\\$"
 
     numeric <- function(x)
@@ -26,16 +30,16 @@ mixedorder <- function(x)
         suppressWarnings( ifelse(is.na(as.numeric(x)), toupper(x), NA) )
       }
 
-
     x <- as.character(x)
 
     which.nas <- which(is.na(x))
     which.blanks <- which(x=="")
 
     if(length(which.blanks) >0)
-    x[ which.blanks ] <- -Inf
+        x[ which.blanks ] <- -Inf
+    
     if(length(which.nas) >0)
-    x[ which.nas ] <- Inf
+        x[ which.nas ] <- Inf
 
     ####
     # - Convert each character string into an vector containing single
@@ -43,7 +47,7 @@ mixedorder <- function(x)
     ####
 
     # find and mark numbers in the form of +1.23e+45.67
-    delimited <- gsub("([+-]{0,1}[0-9]+([eE][\\+\\-]{0,1}[0-9]+){0,1})",
+    delimited <- gsub("([+-]{0,1}[0-9]+.{0,1}[0-9]*([eE][\\+\\-]{0,1}[0-9]+.{0,1}[0-9]*){0,1})",
                       paste(delim,"\\1",delim,sep=""), x)
 
     # separate out numbers

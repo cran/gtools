@@ -31,6 +31,6 @@ export(
        setTCPNoDelay,
        smartbind,
        sprint,
+       stars.pval,
        strmacro
        )
-

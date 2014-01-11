@@ -2,29 +2,27 @@
 \alias{gtools-defunct}
 \alias{assert}
 \alias{addLast}
-\title{Deprecated Functions in the gtools package}
+\alias{capture}
+\alias{sprint}
+\title{Defunct Functions in package \code{gtools}}
 \description{
-  These functions are no longer available in gtools.
-}
-\usage{
-assert(FLAG)
-addLast(fun)
-}
-\arguments{
-  \item{FLAG}{ Expression that should evaluate to a boolean vector}
-  \item{fun}{Function to be called.}
+     The functions or variables listed here are no longer part of
+     package \code{gtools}.
 }
 \details{
   \itemize{
     \item{ \code{assert} is a defunct synonym for
-      \code{\link[base]{stopifnot}}. }
+          \code{\link[base]{stopifnot}}. }
     \item{ \code{addLast} has been replaced by \code{lastAdd}, which has
-      the same purpose but appled using different syntax. }
+          the same purpose but appled using different syntax. }
+    \item{ \code{capture} and \code{capture.output} have been removed in
+          favor of \code{capture.output} from the \code{utils} package.}
   }
 }
 \seealso{
-  \code{\link[base]{Defunct}}
-  \code{\link[base]{stopifnot}}
-  \code{\link[gtools]{lastAdd}}
+  \code{\link[base]{Defunct}},
+  \code{\link[base]{stopifnot}},
+  \code{\link[gtools]{lastAdd}},
+  \code{\link[utils]{capture.output}}
 }
 \keyword{misc}

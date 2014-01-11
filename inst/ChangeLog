@@ -1,5 +1,48 @@
+2014-01-11  warnes
+
+	* [r1762] DESCRIPTION, NAMESPACE, R/capture.R, R/defunct.R,
+	  R/keywords.R, man/capture.Rd, man/gtools-defunct.Rd,
+	  man/stars.pval.Rd: Fixes for gtools release 3.2.0
+
+2013-12-23  warnes
+
+	* [r1761] R/keywords.R, man/keywords.Rd: Extend the keywords()
+	  function to return keywords associated with a specified topic via
+	  'keywords(topic)'.
+	* [r1760] man/stars.pval.Rd: Add keyword.
+	* [r1759] NAMESPACE, R/stars.pval.R, man/stars.pval.Rd: Add
+	  stars.pval() function to convert p-values into significance
+	  symbols.
+
+2013-11-26  warnes
+
+	* [r1748] R/mixedsort.R: mixedorder() was failing to correctly
+	  handle numbers including
+	  decimals due to a faulty regular expression. Prior to the fix:
+	  
+	  > drr
+	  [1] "Dose 0.3 mg" "Dose 0.04 mg" "Dose 0.5 mg"
+	  > gtools::mixedsort(drr)
+	  [1] "Dose 0.3 mg" "Dose 0.04 mg" "Dose 0.5 mg"
+	  
+	  After the fix:
+	  
+	  > drr
+	  [1] "Dose 0.3 mg" "Dose 0.04 mg" "Dose 0.5 mg"
+	  > mixedsort(drr)
+	  [1] "Dose 0.04 mg" "Dose 0.3 mg" "Dose 0.5 mg"
+	  
+	  In addition, an optimization was added that checked if the input
+	  vector
+	  was numeric. If so, simply use the existing base::order function.
+
+2013-11-18  warnes
+
+	* [r1747] R/capture.R: Use ".Deprecated" instead of warning.
+
 2013-11-06  warnes
 
+	* [r1746] DESCRIPTION, inst/NEWS: Update files for gtools 3.1.1
 	* [r1745] R/mixedsort.R: Fix problem with mixedorder/mixedsort when
 	  there is only zero or one elements in the vector.
 
