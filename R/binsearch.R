@@ -51,7 +51,7 @@ binsearch <- function(fun, range, ..., target=0,
               cat("fun(center)=",val,"\n")
             }
 
-          
+
           if( val==target )
             {
               val.lo <- val.hi <- val
@@ -75,9 +75,9 @@ binsearch <- function(fun, range, ..., target=0,
             cat("new hi=",hi,"\n")
             cat("--------------\n")
           }
-          
+
         }
-      
+
       # Create return value
       retval <- list()
       retval$call <- match.call()
@@ -116,8 +116,8 @@ binsearch <- function(fun, range, ..., target=0,
       else if( val.hi==target )
         {
           retval$flag="Found"
-          retval$where=lo
-          retval$value=val.lo
+          retval$where=hi
+          retval$value=val.hi
         }
       else
         {
@@ -125,10 +125,10 @@ binsearch <- function(fun, range, ..., target=0,
           retval$where=c(lo, hi)
           retval$value=c(val.lo, val.hi)
         }
-      
+
       return(retval)
 
     }
-                 
-                                             
+
+
 

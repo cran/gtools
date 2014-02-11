@@ -1,3 +1,29 @@
+gtools 3.3.0 - 2014-02-11
+-------------------------
+
+New features:
+
+- Add the getDependencies() function to return a list of dependencies
+  for the specified package(s).  Includes arguments to control whether
+  these dependencies should be constructed using information from
+  locally installed packages ('installed', default is TRUE), avilable
+  CRAN packages ('available', default is TRUE) and whether to include
+  base ('base', default=FALSE) and recommended ('recommended', default
+  is FALSE) packages.
+
+Bug fixes:
+
+- binsearch() was returning the wrong endpoint & value when the found
+  value was at the upper endpoint.
+
+gtools 3.2.1 - 2014-01-13
+-------------------------
+
+Bug fixes:
+
+- Resolve circular dependency with gdata
+
+
 gtools 3.2.0 - 2014-01-11
 -------------------------
 

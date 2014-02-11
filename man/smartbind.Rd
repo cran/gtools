@@ -1,6 +1,6 @@
 \name{smartbind}
 \alias{smartbind}
-\title{Efficient rbind of data framesy, even if the column names don't match}
+\title{Efficient rbind of data frames, even if the column names don't match}
 \description{
   Efficient rbind of data frames, even if the column names don't match
 }

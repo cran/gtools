@@ -1,5 +1,29 @@
+2014-02-11  warnes
+
+	* [r1771] man/getDependencies.Rd: Fix arguments
+	* [r1770] man/getDependencies.Rd: Update arguments to match code.
+	* [r1769] DESCRIPTION, NAMESPACE, R/clean_up_dependencies2.R,
+	  R/getDependencies.R, man/getDependencies.Rd: Add
+	  getDependencies() function to return a list of package
+	  dependencies.
+
+2014-01-14  warnes
+
+	* [r1768] DESCRIPTION, inst/NEWS: Update for bug-fix release
+	* [r1767] tests, tests/test_binsearch.R: Add test file for
+	  binsearch() function.
+	* [r1766] R/binsearch.R: Fixed bug where binsearch() returned the
+	  wrong endpoint & value when the found value was at the upper
+	  endpoint.
+
+2014-01-13  warnes
+
+	* [r1765] man/smartbind.Rd: Fix typo
+
 2014-01-11  warnes
 
+	* [r1764] inst/NEWS: Update for gtools release 3.2.0
+	* [r1763] man/gtools-defunct.Rd: fixes for R CMD check
 	* [r1762] DESCRIPTION, NAMESPACE, R/capture.R, R/defunct.R,
 	  R/keywords.R, man/capture.Rd, man/gtools-defunct.Rd,
 	  man/stars.pval.Rd: Fixes for gtools release 3.2.0

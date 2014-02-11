@@ -13,6 +13,7 @@ export(
        even,
        foldchange,
        foldchange2logratio,
+       getDependencies,
        inv.logit,
        invalid,
        keywords,
