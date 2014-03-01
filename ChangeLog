@@ -1,5 +1,17 @@
+2014-03-01  warnes
+
+	* [r1776] tests/test_mixedorder.R: Fix cut-and-paste error.
+	* [r1775] DESCRIPTION, inst/NEWS: Update files for gtools 3.3.1
+	  release
+	* [r1774] R/mixedsort.R, tests/test_mixedorder.R: Fix bug in
+	  gtools::mixedorder regular expression for regognizing numbers.
+	  (Periods weren't escaped).
+
 2014-02-11  warnes
 
+	* [r1773] R/clean_up_dependencies2.R: Create and use locate copy of
+	  tools:::.split_op_version.
+	* [r1772] inst/NEWS: Update for gtools 3.3.0.
 	* [r1771] man/getDependencies.Rd: Fix arguments
 	* [r1770] man/getDependencies.Rd: Update arguments to match code.
 	* [r1769] DESCRIPTION, NAMESPACE, R/clean_up_dependencies2.R,

@@ -1,3 +1,15 @@
+gtools 3.3.1 - 2014-03-01
+-------------------------
+
+Bug fixes:
+
+- 'mixedorder' (and hence 'mixedsort') not properly handling
+  single-character strings between numbers, so that '1a2' was being
+  handled as a single string rather than being properly handled as
+  c('1', 'a', '2').
+
+
+
 gtools 3.3.0 - 2014-02-11
 -------------------------
 

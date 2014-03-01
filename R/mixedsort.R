@@ -1,4 +1,4 @@
-# $Id: mixedsort.R 1748 2013-11-26 14:38:58Z warnes $
+# $Id: mixedsort.R 1774 2014-03-01 20:02:08Z warnes $
 
 mixedsort <- function(x) x[mixedorder(x)]
 
@@ -17,7 +17,7 @@ mixedorder <- function(x)
     if( is.numeric(x) )
         return( order(x) )
 
-    
+
     delim="\\$\\@\\$"
 
     numeric <- function(x)
@@ -37,7 +37,7 @@ mixedorder <- function(x)
 
     if(length(which.blanks) >0)
         x[ which.blanks ] <- -Inf
-    
+
     if(length(which.nas) >0)
         x[ which.nas ] <- Inf
 
@@ -47,7 +47,7 @@ mixedorder <- function(x)
     ####
 
     # find and mark numbers in the form of +1.23e+45.67
-    delimited <- gsub("([+-]{0,1}[0-9]+.{0,1}[0-9]*([eE][\\+\\-]{0,1}[0-9]+.{0,1}[0-9]*){0,1})",
+    delimited <- gsub("([+-]{0,1}[0-9]+\\.{0,1}[0-9]*([eE][\\+\\-]{0,1}[0-9]+\\.{0,1}[0-9]*){0,1})",
                       paste(delim,"\\1",delim,sep=""), x)
 
     # separate out numbers
@@ -90,7 +90,7 @@ mixedorder <- function(x)
                         t(rank.character) +
                         apply(matrix(rank.numeric),2,max,na.rm=TRUE)
                         )
-    
+
     rank.overall <- ifelse(is.na(rank.character),rank.numeric,rank.character)
 
     order.frame <- as.data.frame(rank.overall)
