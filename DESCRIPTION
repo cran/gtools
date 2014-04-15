@@ -1,12 +1,12 @@
 Package: gtools
 Title: Various R programming tools
 Description: Various R programming tools
-Version: 3.3.1
-Date: 2014-03-01
+Version: 3.4.0
+Date: 2014-04-15
 Author: Gregory R. Warnes, Ben Bolker, and Thomas Lumley
 Maintainer: Gregory R. Warnes <greg@warnes.net>
 License: LGPL-2.1
-Packaged: 2014-03-01 20:17:26 UTC; warnes
+Packaged: 2014-04-17 17:35:30 UTC; warnes
 NeedsCompilation: yes
 Repository: CRAN
-Date/Publication: 2014-03-02 00:17:13
+Date/Publication: 2014-04-18 01:42:53

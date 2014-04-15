@@ -1,3 +1,8 @@
+2014-04-17  warnes
+
+	* [r1808] DESCRIPTION, NAMESPACE, R/ASCIIfy.R, man/ASCIIfy.Rd: Add
+	  ASCIIfy function posted to RDevel by Arni Magnusson
+
 2014-03-01  warnes
 
 	* [r1776] tests/test_mixedorder.R: Fix cut-and-paste error.

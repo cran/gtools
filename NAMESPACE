@@ -4,6 +4,7 @@ export(
        addLast,
        ask,
        assert,
+       ASCIIfy,
        binsearch,
        capture,
        checkRVersion,
