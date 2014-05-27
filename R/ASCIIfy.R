@@ -1,4 +1,4 @@
-ASCIIfy <- function(string, bytes=2, fallback="?")
+ASCIIfy <- function(x, bytes=2, fallback="?")
 {
   bytes <- match.arg(as.character(bytes), 1:2)
   convert <- function(char)  # convert to ASCII, e.g. "z", "\xfe", or "\u00fe"
@@ -23,13 +23,13 @@ ASCIIfy <- function(string, bytes=2, fallback="?")
     return(ascii)
   }
 
-  if(length(string) > 1)
+  if(length(x) > 1)
   {
-    sapply(string, ASCIIfy, bytes=bytes, fallback=fallback, USE.NAMES=FALSE)
+    sapply(x, ASCIIfy, bytes=bytes, fallback=fallback, USE.NAMES=FALSE)
   }
   else
   {
-    input <- unlist(strsplit(string,""))  # "c"  "a"  "f"  "<\'e>"
+    input <- unlist(strsplit(x,""))       # "c"  "a"  "f"  "<\'e>"
     output <- character(length(input))    # ""   ""   ""   ""
     for(i in seq_along(input))
       output[i] <- convert(input[i])      # "c"  "a"  "f"  "\\u00e9"

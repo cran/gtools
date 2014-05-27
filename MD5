@@ -1,8 +1,8 @@
-a671dd37fc365721275942aed975d7f9 *ChangeLog
-38744921883b836dbfba56d0bbff8668 *DESCRIPTION
+d9acafea0ae89a962d136c4714fa6e88 *ChangeLog
+3339377e32f1c247e472340e800d09dc *DESCRIPTION
 eaba4455ced37627eb4ad325c2038794 *NAMESPACE
-b0106b6f2c8d042bb58f4399528ede0b *NEWS
-174deee96772a2b017b9144766223109 *R/ASCIIfy.R
+a8644a8081da8428987ac599a8287f32 *NEWS
+40be776640196133aebff67618b08dec *R/ASCIIfy.R
 9eb418fd95aa09ba85aed159545dea61 *R/RSCompat.S
 a86a74ba04089ad58ea22e3a994a9b14 *R/addLast.R
 c4ae0d6b5867f6751981e9f93cd2f619 *R/ask.R
@@ -28,13 +28,13 @@ a3ec77919e3a6792f88a0aa39fae4841 *R/mixedsort.R
 02390191f23321a34fcfc41719d66dc6 *R/running.R
 a5ea32bab219fd7c634f034dddada96b *R/scat.R
 e5ddc84d8a502feed32f7f6b1b5e25ab *R/setTCPNoDelay.R
-3d0ac64f38d5b91d4ef8adc2344d5875 *R/smartbind.R
+f6c7ff23b703889d580383ea3e7205d8 *R/smartbind.R
 ef22fb4007dec9fb62eb5ed947292fa3 *R/stars.pval.R
 e8f510e73bd2cd820c384c00d75b0080 *R/strmacro.R
 d2d2d0444a049d74694203974624835c *data/ELISA.rda
-a671dd37fc365721275942aed975d7f9 *inst/ChangeLog
-b0106b6f2c8d042bb58f4399528ede0b *inst/NEWS
-c8908e4db48abf721d73ca9fe210af0a *man/ASCIIfy.Rd
+d9acafea0ae89a962d136c4714fa6e88 *inst/ChangeLog
+a8644a8081da8428987ac599a8287f32 *inst/NEWS
+05087d9c7f92db0ac048dec226e7bc3a *man/ASCIIfy.Rd
 904304f52b08ec847904ac2aa5be9aef *man/ELISA.Rd
 c5b7124f5fdbcc83f2e283314df95858 *man/ask.Rd
 ecbe8481bdcff0d8abd1a47cc64ca7b2 *man/binsearch.Rd
@@ -61,5 +61,6 @@ ece07b78ccb279ab1f88a836c6a0378d *man/smartbind.Rd
 7ba286fa2b1bc994de1c6ec78883cdc8 *man/stars.pval.Rd
 8d4158b8eb92153e2d3f581682b2a3c1 *src/Makevars.win
 bb28a3858ac5a6152565d3b8cef8c70c *src/setTCPNoDelay.c
+6c36d5eac8884ab13c200c1113cf9236 *tests/smartbind_Dates.R
 b859dff6a12425f4ba692dc7706e99ed *tests/test_binsearch.R
 33c5986481c62f046106b02abc4d0c74 *tests/test_mixedorder.R

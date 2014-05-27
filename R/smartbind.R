@@ -63,18 +63,33 @@ smartbind <- function(..., fill=NA, sep=':', verbose=FALSE)
                                 "  End:", end,
                                 "  Column:", col,
                                 "\n", sep="")
+
                 if ("factor" %in% classVec)
                   {
                     newclass <- "character"
                   }
                 else
-                  newclass <- classVec
+                  newclass <- classVec[1]
+
+                ## Coerce everything that isn't a native type to character
+                if(! (newclass %in% c("logical", "integer", "numeric",
+                                     "complex", "character", "raw") ))
+                    {
+                        newclass <- "character"
+                        warning("Converting non-atomic type column '", col,
+                                "' to type character.")
+                    }
 
                 retval[[col]] <- as.vector(rep(fill,nrows), mode=newclass)
               }
 
-            retval[[col]][start:end] <- as.vector(block[,col],
-                                                  mode=class(retval[[col]]))
+            mode <- class(retval[[col]])
+            if(mode=="character")
+                vals <- as.character(block[,col])
+            else
+                vals <- block[,col]
+
+            retval[[col]][start:end] <- as.vector(vals, mode=mode)
           }
         start <- end+1
         blockIndex <- blockIndex+1

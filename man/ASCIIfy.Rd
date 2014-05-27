@@ -6,10 +6,10 @@
   single-byte (\samp{\x00}) or two-byte (\samp{\u0000}) codes.
 }
 \usage{
-ASCIIfy(string, bytes = 2, fallback = "?")
+ASCIIfy(x, bytes = 2, fallback = "?")
 }
 \arguments{
-  \item{string}{a character vector, possibly containing non-ASCII
+  \item{x}{a character vector, possibly containing non-ASCII
     characters.}
   \item{bytes}{either \code{1} or \code{2}, for single-byte
     (\samp{\x00}) or two-byte (\samp{\u0000}) codes.}
@@ -23,7 +23,7 @@ ASCIIfy(string, bytes = 2, fallback = "?")
 \author{Arni Magnusson \email{arnima@hafro.is}}
 \note{
   To render single backslashes, use these or similar techniques:
-  \verb{
+  \preformatted{
     write(ASCIIfy(x), "file.txt")
     cat(paste(ASCIIfy(x), collapse="\n"), "\n", sep="")}
 
