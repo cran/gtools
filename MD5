@@ -1,7 +1,7 @@
-d9acafea0ae89a962d136c4714fa6e88 *ChangeLog
-3339377e32f1c247e472340e800d09dc *DESCRIPTION
-eaba4455ced37627eb4ad325c2038794 *NAMESPACE
-a8644a8081da8428987ac599a8287f32 *NEWS
+8ce65e8748f62a15a845d463ef9dc4ce *ChangeLog
+799ef0349c13933fc12a76ecb5f602c8 *DESCRIPTION
+f8ec272fd1610ad963b6fc8fb5469b64 *NAMESPACE
+4b56bef437760c3635aaf7a0b28b33c7 *NEWS
 40be776640196133aebff67618b08dec *R/ASCIIfy.R
 9eb418fd95aa09ba85aed159545dea61 *R/RSCompat.S
 a86a74ba04089ad58ea22e3a994a9b14 *R/addLast.R
@@ -17,10 +17,12 @@ c089bb5f542501dc1e3ba07f032c84ed *R/dirichlet.R
 1da2198e1d194c705ca89381159b7b63 *R/foldchange.R
 e759eb4772cb9ce930a0c570279155b3 *R/getDependencies.R
 71212f4c14003458fc3e30638f339629 *R/invalid.R
-11fc8cb8e4bd7c93cd8edefe54b9c64c *R/keywords.R
+3f3921bb8ada00eb6fbf7332d689e108 *R/keywords.R
 f00dfc3263a5854151f244493b3f04d0 *R/lastAdd.R
+66f7bacaa290264693ee1b4cbe4cadc8 *R/loadedPackages.R
 2bb525e1930ec3ba2afefa2ff43d74e0 *R/logit.R
 a3ec77919e3a6792f88a0aa39fae4841 *R/mixedsort.R
+429ab819b15f97c8dd6e62db278336d9 *R/na.replace.R
 93a46a6ef5937bdd112468daceac00a6 *R/newVersionAvailable.R
 07cd779ab7e64f697604b8b4fa4c9d70 *R/oddeven.R
 1d016a924dd59daa78ea62d986da2929 *R/permute.R
@@ -32,8 +34,8 @@ f6c7ff23b703889d580383ea3e7205d8 *R/smartbind.R
 ef22fb4007dec9fb62eb5ed947292fa3 *R/stars.pval.R
 e8f510e73bd2cd820c384c00d75b0080 *R/strmacro.R
 d2d2d0444a049d74694203974624835c *data/ELISA.rda
-d9acafea0ae89a962d136c4714fa6e88 *inst/ChangeLog
-a8644a8081da8428987ac599a8287f32 *inst/NEWS
+8ce65e8748f62a15a845d463ef9dc4ce *inst/ChangeLog
+4b56bef437760c3635aaf7a0b28b33c7 *inst/NEWS
 05087d9c7f92db0ac048dec226e7bc3a *man/ASCIIfy.Rd
 904304f52b08ec847904ac2aa5be9aef *man/ELISA.Rd
 c5b7124f5fdbcc83f2e283314df95858 *man/ask.Rd
@@ -41,7 +43,7 @@ ecbe8481bdcff0d8abd1a47cc64ca7b2 *man/binsearch.Rd
 e1a3f01f01db3e883397eaa49037af6f *man/checkRVersion.Rd
 0b2fba4b1456254689640add6afec843 *man/combinations.Rd
 1c240ef01582dd99e3a2e432e7dfb2ba *man/defmacro.Rd
-22b71a514ea7acc360552527394ce9c1 *man/dirichlet.Rd
+3ac18878a63f7ca4913f66d5ecb72a4a *man/dirichlet.Rd
 74868a3948263db0fbc2519b792acba2 *man/foldchange.Rd
 c208ca0a5e9c38fcb903cfd7656d5375 *man/getDependencies.Rd
 aa98190531ff93721b715e61000f76a4 *man/gtools-defunct.Rd
@@ -49,8 +51,10 @@ aa98190531ff93721b715e61000f76a4 *man/gtools-defunct.Rd
 01c743eee2dbb9dc14d02035fa05063c *man/invalid.Rd
 8d8b5429047edd4ed52f8f8f6b11f807 *man/keywords.Rd
 67b9c146bd8470b1dd5ddcac782c2071 *man/lastAdd.Rd
+8ab31f5f313c145e05601fd8afc7b59b *man/loadedPackages.Rd
 3c207d731ad8ead62af138afe2e20c5f *man/logit.Rd
 422c16f570c15590fa83e1a71506757f *man/mixedsort.Rd
+8d5842217510c21d95fb697caee3e6c6 *man/na.replace.Rd
 f4d6f8222b9448ef039d9cbf582ee29e *man/oddeven.Rd
 f911c6c34412df66c1ff0d6376f46c3f *man/permute.Rd
 30ac79ee93340f4174ddf91022154c0c *man/quantcut.Rd

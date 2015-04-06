@@ -1,4 +1,4 @@
-% $Id: dirichlet.Rd 1433 2010-05-01 22:03:03Z warnes $
+% $Id: dirichlet.Rd 1918 2015-04-06 22:09:54Z warnes $
 %
 \name{rdirichlet}
 \alias{rdirichlet}
@@ -33,8 +33,8 @@ ddirichlet(x, alpha)
 }
 \author{
   Code original posted by Ben Bolker to R-News on Fri Dec 15 2000. See
-  \url{http://www.r-project.org/nocvs/mail/r-help/2000/3865.html}.  Ben 
-  attributed the code to Ian Wilson \email{i.wilson@maths.abdn.ac.uk}.
+  \url{https://stat.ethz.ch/pipermail/r-help/2000-December/009561.html}.
+  Ben attributed the code to Ian Wilson \email{i.wilson@maths.abdn.ac.uk}.
   Subsequent modifications by Gregory R. Warnes
   \email{greg@warnes.net}.
 }

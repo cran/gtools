@@ -1,5 +1,48 @@
+2015-04-09  warnes
+
+	* [r1920] DESCRIPTION, NAMESPACE, R/loadedPackages.R,
+	  R/na.replace.R, inst/ChangeLog, inst/NEWS, man/loadedPackages.Rd,
+	  man/na.replace.Rd: Move first()/last()/left()/right() to gdata.
+	  Add new functions na.replace() and loadedPackages().
+	  Add more text to package description.
+
+2015-04-08  warnes
+
+	* [r1919] NAMESPACE, R/first.R, man/first.Rd, man/left.Rd: Move
+	  first/last/left/right to from gtools to gdata
+
+2015-04-06  warnes
+
+	* [r1918] man/dirichlet.Rd: Correct URL
+	* [r1917] inst/ChangeLog, inst/NEWS: Update NEWS and ChangeLog for
+	  gtools 3.5.0
+	* [r1916] inst/ChangeLog: Add ChangeLog files to repository
+	* [r1915] R/keywords.R: Implement fix to keywords() needed for
+	  R-3.4.1, as suggested by Kurt
+	  Hornik.
+	* [r1914] NAMESPACE, R/first.R: - Export S3 methods for first(),
+	  last(), left() and right().
+	  - Ensure code matches man page for first(), last(), left(), and
+	  right().
+
+2014-10-09  warnes
+
+	* [r1897] DESCRIPTION, inst/NEWS: Update for 3.5.0 release of
+	  gtools
+	* [r1896] R/first.R: Make right() and left() S3 methods for classes
+	  data.frame and matrix
+
+2014-08-27  warnes
+
+	* [r1872] man/first.Rd: Fix man page
+	* [r1871] DESCRIPTION, NAMESPACE, R/first.R, man/first.Rd,
+	  man/left.Rd: Finish adding first(), last(), left(), and right().
+	* [r1870] R/first.R: Add functions first(), last(), left(), and
+	  right().
+
 2014-05-28  warnes
 
+	* [r1816] DESCRIPTION, inst/NEWS: Update for gtools 3.4.1
 	* [r1815] tests/smartbind_Dates.R: Add test to ensure smartbind()
 	  properly handles Date columns.
 	* [r1814] R/smartbind.R: smartbind: Convert non-native type columns

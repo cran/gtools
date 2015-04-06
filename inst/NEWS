@@ -1,3 +1,19 @@
+gtools 3.4.2 - 2015-04-06
+-------------------------
+
+New features:
+
+- New function loadedPackages() to display name, version, and path of
+  loaded packages (package namespaces).
+
+- New function: na.replace() to replace missing values within a
+  vector with a specified value.`
+
+Bug fixes:
+
+- Modify keywords() to work properly in R 3.4.X and later.
+
+
 gtools 3.4.1 - 2014-05-27
 -------------------------
 

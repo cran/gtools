@@ -32,7 +32,11 @@ keywords <- function( topic )
 
           item <- paste("^",topic,"$", sep="")
 
-          topics <- function(k) help.search(keyword=k)$matches[,"topic"]
+          topics <- function(k)
+              {
+                   matches <- help.search(keyword=k)$matches
+                   matches[ , match("topic", tolower(colnames(matches)))]
+              }
           matches <- lapply(kw, topics)
           names(matches) <- kw
 
