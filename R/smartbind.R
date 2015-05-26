@@ -167,7 +167,6 @@ smartbind <- function(..., fill=NA, sep=':', verbose=FALSE)
 
                 if(length(colClass)>1) # not just plain factor
                    {
-                     browser()
                     warning( "column '", col, "' of class ",
                             paste("'", colClass, "'", collapse=":",
                                   sep="'"),

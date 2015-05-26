@@ -1,4 +1,4 @@
-% $Id: quantcut.Rd 1433 2010-05-01 22:03:03Z warnes $
+% $Id: quantcut.Rd 2025 2015-05-25 14:13:12Z warnes $
 %
 \name{quantcut}
 \alias{quantcut}
@@ -8,13 +8,15 @@
   Create a factor variable using the quantiles of a continous variable.
 }
 \usage{
-quantcut(x, q=seq(0,1,by=0.25), na.rm=TRUE, ...)
+quantcut(x, q=4, na.rm=TRUE, ...)
 }
 %- maybe also `usage' for other objects documented here.
 \arguments{
   \item{x}{ Continous variable. }
-  \item{q}{ Vector of quantiles used for creating groups. Defaults to
-    \code{seq(0, 1, by=0.25)}.  See \code{\link{quantile}} for details. }
+  \item{q}{ Either a integer number of equally spaced quantile groups to
+    create, or a vector of quantiles used for creating groups. Defaults to
+    \code{q=4} which is equivalent to \code{q=seq(0, 1, by=0.25)}.
+    See \code{\link{quantile}} for details. }
   \item{na.rm}{ Boolean indicating whether missing values should be
     removed when computing quantiles.  Defaults to TRUE.}
   \item{\dots}{ Optional arguments passed to \code{\link{cut}}. }
@@ -31,7 +33,7 @@ quantcut(x, q=seq(0,1,by=0.25), na.rm=TRUE, ...)
   of quantile intervals.
 }
 \value{
-  Factor variable with one level for each quantile interval given by \code{q}.
+  Factor variable with one level for each quantile interval.
 }
 
 \author{Gregory R. Warnes \email{greg@warnes.net}}
@@ -51,15 +53,21 @@ quantcut(x, q=seq(0,1,by=0.25), na.rm=TRUE, ...)
   table(quartiles)
 
   ## cut into deciles
-  deciles <- quantcut( x, seq(0,1,by=0.1) )
-  table(deciles)
+  deciles.1 <- quantcut( x, 10 )
+  table(deciles.1)
+  # or equivalently
+  deciles.2 <- quantcut( x, seq(0,1,by=0.1) )
+
+  \testonly{
+    stopifnot(identical(deciles.1, deciles.2))
+  }
 
   ## show handling of 'tied' quantiles.
   x <- round(x)  # discretize to create ties
   stem(x)        # display the ties
-  deciles <- quantcut( x, seq(0,1,by=0.1) )
+  deciles <- quantcut( x, 10 )
 
-  table(deciles) # note that there are only 5 groups (not 10) 
+  table(deciles) # note that there are only 5 groups (not 10)
                  # due to duplicates
 
 }

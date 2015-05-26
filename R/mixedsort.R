@@ -1,33 +1,67 @@
-# $Id: mixedsort.R 1774 2014-03-01 20:02:08Z warnes $
+mixedsort <- function(x,
+                      decreasing=FALSE,
+                      na.last=TRUE,
+                      blank.last=FALSE,
+                      numeric.type=c("decimal", "roman"),
+                      roman.case=c("upper","lower","both")
+                      )
+    {
+        ord <- mixedorder(x,
+                          decreasing=decreasing,
+                          na.last=na.last,
+                          blank.last=blank.last,
+                          numeric.type=numeric.type,
+                          roman.case=roman.case
+                          )
+        x[ord]
+    }
 
-mixedsort <- function(x) x[mixedorder(x)]
-
-mixedorder <- function(x)
+mixedorder <- function(x,
+                       decreasing=FALSE,
+                       na.last=TRUE,
+                       blank.last=FALSE,
+                       numeric.type=c("decimal", "roman"),
+                       roman.case=c("upper","lower","both")
+                       )
   {
     # - Split each each character string into an vector of strings and
     #   numbers
     # - Separately rank numbers and strings
     # - Combine orders so that strings follow numbers
 
+    numeric.type <- match.arg(numeric.type)
+    roman.case   <- match.arg(roman.case)
+
     if(length(x)<1)
         return(NULL)
     else if(length(x)==1)
         return(1)
 
-    if( is.numeric(x) )
-        return( order(x) )
-
+    if( !is.character(x) )
+        return( order(x, decreasing=decreasing, na.last=na.last) )
 
     delim="\\$\\@\\$"
 
-    numeric <- function(x)
+    if(numeric.type=="decimal")
       {
-        suppressWarnings( as.numeric(x) )
+        regex <- "((?:(?i)(?:[-+]?)(?:(?=[.]?[0123456789])(?:[0123456789]*)(?:(?:[.])(?:[0123456789]{0,}))?)(?:(?:[eE])(?:(?:[-+]?)(?:[0123456789]+))|)))"  # uses PERL syntax
+        numeric <- function(x) as.numeric(x)
       }
+    else if (numeric.type=="roman")
+      {
+        regex <- switch(roman.case,
+                        "both"  = "([IVXCLDMivxcldm]+)",
+                        "upper" = "([IVXCLDM]+)",
+                        "lower" = "([ivxcldm]+)"
+                        )
+        numeric <- function(x) roman2int(x)
+      }
+    else
+      stop("Unknown value for numeric.type: ", numeric.type)
 
     nonnumeric <- function(x)
       {
-        suppressWarnings( ifelse(is.na(as.numeric(x)), toupper(x), NA) )
+        ifelse(is.na(numeric(x)), toupper(x), NA)
       }
 
     x <- as.character(x)
@@ -35,20 +69,16 @@ mixedorder <- function(x)
     which.nas <- which(is.na(x))
     which.blanks <- which(x=="")
 
-    if(length(which.blanks) >0)
-        x[ which.blanks ] <- -Inf
-
-    if(length(which.nas) >0)
-        x[ which.nas ] <- Inf
-
     ####
     # - Convert each character string into an vector containing single
     #   character and  numeric values.
     ####
 
     # find and mark numbers in the form of +1.23e+45.67
-    delimited <- gsub("([+-]{0,1}[0-9]+\\.{0,1}[0-9]*([eE][\\+\\-]{0,1}[0-9]+\\.{0,1}[0-9]*){0,1})",
-                      paste(delim,"\\1",delim,sep=""), x)
+    delimited <- gsub(regex,
+                      paste(delim,"\\1",delim,sep=""),
+                      x,
+                      perl=TRUE)
 
     # separate out numbers
     step1 <- strsplit(delimited, delim)
@@ -57,10 +87,10 @@ mixedorder <- function(x)
     step1 <- lapply( step1, function(x) x[x>""] )
 
     # create numeric version of data
-    step1.numeric <- lapply( step1, numeric )
+    suppressWarnings( step1.numeric <-  lapply( step1, numeric ) )
 
     # create non-numeric version of data
-    step1.character <- lapply( step1, nonnumeric )
+    suppressWarnings( step1.character <- lapply( step1, nonnumeric ) )
 
     # now transpose so that 1st vector contains 1st element from each
     # original string
@@ -79,7 +109,7 @@ mixedorder <- function(x)
                               )
 
     # now order them
-    rank.numeric   <- sapply(step1.numeric.t,rank)
+    rank.numeric   <- sapply(step1.numeric.t, rank)
     rank.character <- sapply(step1.character.t,
                              function(x) as.numeric(factor(x)))
 
@@ -95,10 +125,26 @@ mixedorder <- function(x)
 
     order.frame <- as.data.frame(rank.overall)
     if(length(which.nas) > 0)
-      order.frame[which.nas,] <- Inf
-    retval <- do.call("order",order.frame)
+        if(is.na(na.last))
+            order.frame[which.nas,] <- NA
+        else if(na.last)
+            order.frame[which.nas,] <- Inf
+        else
+            order.frame[which.nas,] <- -Inf
+
+    if(length(which.blanks) > 0)
+        if(is.na(blank.last))
+            order.frame[which.blanks,] <- NA
+        else if(blank.last)
+            order.frame[which.blanks,] <- 1e99
+        else
+            order.frame[which.blanks,] <- -1e99
+
+    order.frame <- as.list(order.frame)
+    order.frame$decreasing <- decreasing
+    order.frame$na.last <- NA
+
+    retval <- do.call("order", order.frame)
 
     return(retval)
   }
-
-

@@ -1,4 +1,4 @@
-# $Id: dirichlet.R 625 2005-06-09 14:20:30Z nj7w $
+# $Id: dirichlet.R 2020 2015-05-23 22:12:57Z warnes $
 
 # Posted by Ben Bolker to R-News on Fri Dec 15 2000
 # http://www.r-project.org/nocvs/mail/r-help/2000/3865.html
@@ -29,9 +29,9 @@ ddirichlet<-function(x,alpha)
   dirichlet1 <- function(x, alpha)
     {
       logD <- sum(lgamma(alpha)) - lgamma(sum(alpha))
-      s<-sum((alpha-1)*log(x))
+      s <-(alpha-1)*log(x)
+      s <- ifelse(alpha==1 & x==0, -Inf, s)
       exp(sum(s)-logD)
-
     }
 
   # make sure x is a matrix

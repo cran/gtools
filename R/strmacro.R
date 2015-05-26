@@ -22,11 +22,6 @@ strmacro <- function(..., expr, strexpr)
         {
           a[[i]] <- a[[i]]
         }
-      #if (nn[i] == "DOTS")
-      #  {
-      #    nn[i] <- "..."
-      #    a[[i]] <- formals(function(...){})[[1]]
-      #  }
     }
   names(a) <- nn
   a <- as.list(a)
@@ -38,27 +33,11 @@ strmacro <- function(..., expr, strexpr)
         ## build replacement list
         reptab <- a # copy defaults first
         reptab$"..." <- NULL
-        #reptab$DOTS <- ""
         
         args <- match.call(expand.dots=TRUE)[-1]
-        #print(args)
                           
         for(item in names(args))
-          ##if(item %in% names(reptab))
           reptab[[item]] <- args[[item]]
-        ##else
-        ##  {
-        ##    browser()
-        ##    oldval <- reptab[["DOTS"]]
-        ##    addval <- paste(item, "=", args[[item]])
-        ##    if(oldval>"")
-        ##      newval <- paste(c(oldval, addval), collapse=", ")
-        ##    else
-        ##      newval <- addval
-        ##    reptab[["DOTS"]] <- newval
-        ##  }
-        
-        #print(reptab)
         
         ## do the replacements
         body <- strexpr
@@ -77,8 +56,6 @@ strmacro <- function(..., expr, strexpr)
                          body)
           }
 
-        #print(body)
-        
         fun <- parse(text=body)
         eval(fun, parent.frame())
 

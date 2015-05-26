@@ -2,11 +2,14 @@ useDynLib(gtools)
 
 export(
        addLast,
+       asc,
+       ASCIIfy,
        ask,
        assert,
-       ASCIIfy,
+       assignEdgewise,
        binsearch,
        capture,
+       chr,
        checkRVersion,
        combinations,
        ddirichlet,
@@ -30,11 +33,14 @@ export(
        permute,
        quantcut,
        rdirichlet,
+       roman2int,
        running,
        scat,
        setTCPNoDelay,
        smartbind,
        sprint,
        stars.pval,
-       strmacro
+       strmacro,
+       unByteCode,
+       unByteCodeAssign
        )

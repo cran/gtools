@@ -22,8 +22,7 @@ ASCIIfy(x, bytes = 2, fallback = "?")
 }
 \author{Arni Magnusson \email{arnima@hafro.is}}
 \note{
-  To render single backslashes, use these or similar techniques:
-  \preformatted{
+  To render single backslashes, use these or similar techniques:\preformatted{
     write(ASCIIfy(x), "file.txt")
     cat(paste(ASCIIfy(x), collapse="\n"), "\n", sep="")}
 
