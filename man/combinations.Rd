@@ -1,4 +1,4 @@
-% $Id: combinations.Rd 1433 2010-05-01 22:03:03Z warnes $
+% $Id: combinations.Rd 2169 2017-06-14 19:42:59Z warnes $
 %
 \name{combinations}
 \alias{combinations}
@@ -36,7 +36,7 @@ permutations(n, r, v=1:n, set=TRUE, repeats.allowed=FALSE)
   Returns a matrix where each row contains a vector of length \code{r}.
 }
 \references{Venables, Bill.  "Programmers Note", R-News, Vol 1/1,
-  Jan. 2001. \url{http://cran.r-project.org/doc/Rnews} }
+  Jan. 2001. \url{https://cran.r-project.org/doc/Rnews/} }
 \author{ Original versions by Bill Venables
   \email{Bill.Venables@cmis.csiro.au}.  Extended to handle
   \code{repeats.allowed} by Gregory R. Warnes
@@ -53,6 +53,6 @@ permutations(3,2,letters[1:3],repeats=TRUE)
 # To use large 'n', you need to change the default recusion limit
 options(expressions=1e5)
 cmat <- combinations(300,2)
-dim(cmat) # 44850 by 2 
+dim(cmat) # 44850 by 2
 }
 \keyword{ manip }

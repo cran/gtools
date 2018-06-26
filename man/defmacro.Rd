@@ -50,7 +50,7 @@ strmacro(..., expr, strexpr)
   a C programmer might expect
   \code{mul(i, j + k)} to expand (incorrectly) to \code{i*j + k}. In fact it
   expands correctly, to the equivalent of \code{i*(j + k)}.
-  
+
   For a discussion of the differences between functions
   and macros, please Thomas Lumley's R-News article (reference below).
 }
@@ -61,7 +61,7 @@ strmacro(..., expr, strexpr)
   The original \code{defmacro} code was directly taken from:
 
   Lumley T. "Programmer's Niche: Macros in R", R News, 2001, Vol 1,
-  No. 3, pp 11--13, \url{http://CRAN.R-project.org/doc/Rnews/}
+  No. 3, pp 11--13, \url{https://cran.r-project.org/doc/Rnews/}
 }
 \author{ Thomas Lumley wrote \code{defmacro}.  Gregory R. Warnes
   \email{greg@warnes.net} enhanced it and created
@@ -112,7 +112,7 @@ plot.d( d, V1, lwd=4)  # use optional 'DOTS' argument
 
 ###
 # String macro (note the quoted text in the calls below)
-# 
+#
 # This style of macro can be useful when you are reading
 # function arguments from a text file
 ###
@@ -121,7 +121,7 @@ plot.s <- strmacro( DF, VAR, COL="'red'", TITLE="''", DOTS="", expr=
 )
 
 plot.s( "d", "V1")
-plot.s( DF="d", VAR="V1", COL='"blue"' ) 
+plot.s( DF="d", VAR="V1", COL='"blue"' )
 plot.s( "d", "V1", DOTS='lwd=4')  # use optional 'DOTS' argument
 
 

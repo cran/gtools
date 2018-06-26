@@ -1,6 +1,6 @@
 newVersionAvailable <- function(quiet=FALSE)
   {
-    page <- scan(file="http://cran.r-project.org/src/base/R-2", what="", quiet=TRUE)
+    page <- scan(file="https://cran.r-project.org/src/base/R-2", what="", quiet=TRUE)
     matches <- grep("R-[0-9]\\.[0-9]+\\.[0-9]+", page, value=TRUE)
     versionList <- gsub("^.*R-([0-9].[0-9]+.[0-9]+).*$","\\1",matches)
     versionList <- numeric_version(versionList)
@@ -24,5 +24,5 @@ newVersionAvailable <- function(quiet=FALSE)
           }
         invisible( NULL );
       }
-    
+
   }

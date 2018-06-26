@@ -1,4 +1,4 @@
-# $Id: quantcut.R 1949 2015-04-23 21:47:48Z warnes $
+# $Id: quantcut.R 2145 2017-05-23 15:55:37Z warnes $
 
 quantcut <- function(x, q=4, na.rm=TRUE, ... )
   {
@@ -22,7 +22,7 @@ quantcut <- function(x, q=4, na.rm=TRUE, ... )
         reposition <- function(cut)
                            {
                              flag <- x>=cut
-                             if(sum(flag)==0)
+                             if(sum(flag, na.rm=na.rm)==0)
                                return(cut)
                              else
                                return(min(x[flag], na.rm=na.rm))

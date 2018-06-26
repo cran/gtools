@@ -5,10 +5,11 @@
   Efficient rbind of data frames, even if the column names don't match
 }
 \usage{
-smartbind(..., fill=NA, sep=':', verbose=FALSE)
+smartbind(..., list, fill=NA, sep=':', verbose=FALSE)
 }
 \arguments{
   \item{\dots}{Data frames to combine}
+  \item{list}{List containing data frames to combine}
   \item{fill}{Value to use when 'filling' missing columns.
     Defaults to \code{NA}. }
   \item{sep}{Character string used to separate column names when pasting
@@ -75,9 +76,11 @@ smartbind(..., fill=NA, sep=':', verbose=FALSE)
   # But smartbind will 'do the right thing'
   df <- do.call("smartbind",Z)
   df
+
+  # Equivalent call:
+  df <- smartbind(list=Z)
+
 }
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
 \keyword{manip}
 

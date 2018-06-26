@@ -2,11 +2,25 @@
 ## Function to do rbind of data frames quickly, even if the columns don't match
 ##
 
-smartbind <- function(..., fill=NA, sep=':', verbose=FALSE)
+smartbind <- function(..., list, fill=NA, sep=':', verbose=FALSE)
   {
-    data <- list(...)
+    data <- base::list(...)
+    if(!missing(list))
+      {
+        data <- modifyList(list, data)
+      }
+    data <- data[!sapply(data, function(l) is.null(l) | (ncol(l)==0) | (nrow(l)==0) )]
+
+
+    defaultNames <- seq.int(length(data))
+
     if(is.null(names(data)))
-      names(data) <- as.character(1:length(data))
+      names(data) <- defaultNames
+
+    emptyNames <- names(data)==""
+    if (any(emptyNames) )
+      names(data)[emptyNames] <- defaultNames[emptyNames]
+
     data <- lapply(data,
                    function(x)
                    if(is.matrix(x) || is.data.frame(x))
@@ -16,7 +30,7 @@ smartbind <- function(..., fill=NA, sep=':', verbose=FALSE)
                    )
 
     #retval <- new.env()
-    retval <- list()
+    retval <- base::list()
     rowLens <- unlist(lapply(data, nrow))
     nrows <- sum(rowLens)
 
@@ -35,9 +49,9 @@ smartbind <- function(..., fill=NA, sep=':', verbose=FALSE)
     blockIndex <- 1
     for(block in data)
       {
-        colClassList    [[blockIndex]] <- list()
+        colClassList    [[blockIndex]] <- base::list()
         factorColumnList[[blockIndex]] <- character(length=0)
-        factorLevelList [[blockIndex]] <- list()
+        factorLevelList [[blockIndex]] <- base::list()
 
         if(verbose) print(head(block))
         end <- start+nrow(block)-1
@@ -57,33 +71,55 @@ smartbind <- function(..., fill=NA, sep=':', verbose=FALSE)
                   levels(block[,col])
             }
 
-            if( !(col %in% names(retval)))
+            if(verbose) cat("Start:", start,
+                            "  End:", end,
+                            "  Column:", col,
+                            "\n", sep="")
+
+            if ("factor" %in% classVec)
               {
-                if(verbose) cat("Start:", start,
-                                "  End:", end,
-                                "  Column:", col,
-                                "\n", sep="")
-
-                if ("factor" %in% classVec)
-                  {
-                    newclass <- "character"
-                  }
-                else
-                  newclass <- classVec[1]
-
-                ## Coerce everything that isn't a native type to character
-                if(! (newclass %in% c("logical", "integer", "numeric",
-                                     "complex", "character", "raw") ))
-                    {
-                        newclass <- "character"
-                        warning("Converting non-atomic type column '", col,
-                                "' to type character.")
-                    }
-
-                retval[[col]] <- as.vector(rep(fill,nrows), mode=newclass)
+                newclass <- "character"
               }
+            else
+              newclass <- classVec[1]
 
-            mode <- class(retval[[col]])
+            ## Coerce everything that isn't a native type to character
+            if(! (newclass %in% c("logical", "integer", "numeric",
+                                 "complex", "character", "raw") ))
+                {
+                    newclass <- "character"
+                    warning("Converting non-atomic type column '", col,
+                            "' to type character.")
+                }
+
+            if(! (col %in% names(retval) ) )
+              retval[[col]] <- as.vector(rep(fill,nrows), mode=newclass)
+
+            ## Handle case when current and previous native types differ
+            oldclass <- class(retval[[col]])
+
+            if(oldclass != newclass)
+            {
+              # handle conversions in case of conflicts
+              #   numeric vs integer --> numeric
+              #   complex vs numeric or integer --> complex
+              #   anything else:  --> character
+              if(oldclass %in% c("integer", "numeric") && newclass %in% c("integer", "numeric") )
+                class(retval[[col]]) <- mode <- "numeric"
+              else if(oldclass=="complex" && newclass %in% c("integer", "numeric") )
+                class(retval[[col]]) <- mode <- "complex"
+              else if(oldclass %in% c("integer", "numeric") && newclass=="complex")
+                class(retval[[col]]) <- mode <- "complex"
+              else
+                {
+                  class(retval[[col]]) <- mode <- "character"
+                  warning("Column class mismatch for '", col, "'. ",
+                          "Converting column to class 'character'.")
+                }
+            }
+            else
+              mode <- oldclass
+
             if(mode=="character")
                 vals <- as.character(block[,col])
             else
@@ -95,12 +131,12 @@ smartbind <- function(..., fill=NA, sep=':', verbose=FALSE)
         blockIndex <- blockIndex+1
       }
 
-    all.equal.or.null <- function(x,y,...)
+    all.equal.or.null <- function(x,y)
       {
         if(is.null(x) || is.null(y) )
           return(TRUE)
         else
-          return(all.equal(x,y,...))
+          return(all.equal(x,y))
       }
 
     ## Handle factors, merging levels
@@ -149,9 +185,9 @@ smartbind <- function(..., fill=NA, sep=':', verbose=FALSE)
             ## and use that one
             longestIndex  <- which.max( sapply(colLevels, length) )
             longestLevels <- colLevels[[longestIndex]]
-            allSubset <- sapply(colLevels[-longestIndex],
+            allSubset <- all(sapply(colLevels[-longestIndex],
                                 function(l) all(l %in% longestLevels)
-                                )
+                                ))
             if(allSubset)
               {
                 if("ordered" %in% colClass)
