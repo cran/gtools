@@ -1,5 +1,3 @@
-% $Id: combinations.Rd 2169 2017-06-14 19:42:59Z warnes $
-%
 \name{combinations}
 \alias{combinations}
 \alias{permutations}

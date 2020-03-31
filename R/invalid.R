@@ -1,5 +1,3 @@
-# $Id: invalid.R 625 2005-06-09 14:20:30Z nj7w $
-
 invalid <- function(x)
   {
     if( missing(x) || is.null(x) || length(x)==0 )

@@ -1,5 +1,4 @@
-# $Id: scat.R 625 2005-06-09 14:20:30Z nj7w $
-
+# TODO: Depricate in favor of message
 # cat to stdout and immediately flush
 scat <- function(...)
   {

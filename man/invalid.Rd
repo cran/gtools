@@ -1,9 +1,7 @@
-% $Id: invalid.Rd 1433 2010-05-01 22:03:03Z warnes $
-%
 \name{invalid}
 \alias{invalid}
 \title{Test if a value is missing, empty, or contains only NA or NULL values}
-\description{ 
+\description{
   Test if a value is missing, empty, or contains only NA or NULL values.
 }
 \usage{

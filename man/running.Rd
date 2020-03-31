@@ -1,5 +1,3 @@
-% $Id: running.Rd 1433 2010-05-01 22:03:03Z warnes $
-%
 \name{running}
 \alias{running}
 \title{Apply a Function Over Adjacent Subsets of a Vector}
@@ -48,7 +46,7 @@ running(X, Y=NULL, fun=mean, width=min(length(X), 20),
   \code{Y} is specified the function must be bivariate.
 }
 \value{
-  List (if \code{simplify==TRUE}), vector, or matrix containg the
+  List (if \code{simplify==TRUE}), vector, or matrix containing the
   results of applying the function \code{fun} to the
   subsets of \code{X} (\code{running}) or \code{X} and \code{Y}.
 

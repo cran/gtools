@@ -1,5 +1,3 @@
-% $Id: permute.Rd 1433 2010-05-01 22:03:03Z warnes $
-%
 \name{permute}
 \alias{permute}
 \title{Randomly Permute the Elements of a Vector}

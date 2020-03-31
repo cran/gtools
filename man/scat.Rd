@@ -1,12 +1,10 @@
-% $Id: scat.Rd 1433 2010-05-01 22:03:03Z warnes $
-
 \name{scat}
 \alias{scat}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{Display debugging text}
 \description{
   If \code{getOption('DEBUG')==TRUE}, write text to STDOUT and flush so
-  that the text is immediatly displayed. Otherwise, do nothing.
+  that the text is immediately displayed. Otherwise, do nothing.
 }
 
 \usage{

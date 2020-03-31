@@ -23,13 +23,16 @@ Description: Functions to assist in R programming, including:
   - generate significance stars from p-values ('stars.pval'),
   - convert characters to/from ASCII codes ('asc', 'chr'),
   - convert character vector to ASCII representation ('ASCIIfy').
-Version: 3.8.1
-Date: 2018-06-19
+Version: 3.8.2
+Date: 2020-03-23
 Author: Gregory R. Warnes, Ben Bolker, and Thomas Lumley
 Maintainer: Gregory R. Warnes <greg@warnes.net>
 License: GPL-2
 Depends: methods, stats, utils
+URL: https://github.com/r-gregmisc/gtools
+BugReports: https://github.com/r-gregmisc/gtools/issues
+Language: en-US
 NeedsCompilation: yes
-Packaged: 2018-06-25 14:51:36 UTC; gwarnes
+Packaged: 2020-03-29 23:27:01 UTC; gwarnes
 Repository: CRAN
-Date/Publication: 2018-06-26 14:37:57 UTC
+Date/Publication: 2020-03-31 13:50:02 UTC

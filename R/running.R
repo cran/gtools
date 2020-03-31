@@ -1,5 +1,3 @@
-# $Id: running.R 1568 2012-06-19 13:56:52Z warnes $
-
 "running" <- function(X, Y=NULL,
                       fun=mean,
                       width=min(length(X), 20),

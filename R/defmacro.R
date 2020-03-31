@@ -9,7 +9,7 @@
 ##  number       = 3,
 ##  pages	       = {11--13},
 ##  month	       = {September},
-##  url	       = {http://CRAN.R-project.org/doc/Rnews/}
+##  url	       = {https://cran.r-project.org/doc/Rnews/}
 ##}
 defmacro <- function(..., expr) #, DOTS=FALSE)
 {
@@ -46,17 +46,17 @@ defmacro <- function(..., expr) #, DOTS=FALSE)
                           eval(tmp, parent.frame())
                         },
                         list(body = expr)))
-  
+
   ## add the argument list
   formals(ff) <- a
-  
+
   ## create a fake source attribute
   mm <- match.call()
   mm$expr <- NULL
   mm[[1]] <- as.name("macro")
   attr(ff, "source") <- c(deparse(mm),
                           deparse(expr))
-  
+
   ## return the 'macro'
   ff
 }

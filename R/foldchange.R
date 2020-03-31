@@ -1,5 +1,3 @@
-# $Id: foldchange.R 625 2005-06-09 14:20:30Z nj7w $
-
 foldchange <- function(num,denom)
   {
     ifelse(num >= denom, num/denom, -denom/num)

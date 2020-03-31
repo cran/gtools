@@ -1,5 +1,3 @@
-% $Id: oddeven.Rd 1433 2010-05-01 22:03:03Z warnes $
-%
 \name{odd}
 \alias{odd}
 \alias{even}
