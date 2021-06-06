@@ -1,3 +1,77 @@
+gtools 3.9.2 - 2021-06-03
+-------------------------
+
+Bug fixes:
+
+- Fix missing man page and export for `combinations` and `permutations`.
+
+Behind the scenes:
+
+- Fixed more spelling/typographical errors, mostly in `NEWS.md`.
+
+- Speed up `checkRversion` by removing checks for versions 2.x and 3.x.
+
+gtools 3.9.1 - 2021-06-01
+-------------------------
+
+Bug fixes:
+
+- Use valid HTTP request for example in `setTCPNoDelay` to prevent
+  errors when running tests.
+
+Behind the scenes:
+
+- Fixed numerous spelling/typographical errors.
+
+- Update obsolete http URLs to https 
+
+gtools 3.9.0 - 2021-05-31
+-------------------------
+
+New functions:
+
+- New `script_file` and `script_path` functions to obtain the 
+  directory or full path to the currently executing script.
+
+- New 'stat_mode` function to calculate the statistical mode (most
+  frequently occurring value).
+
+- New `capwords` function to apply title capitalization rules to a
+  character vector.
+  
+- Move `baseOf` from `gplots` as requested by Steffen Möller. #2 
+
+New parameters:
+
+- Add `scientific` parameter to `mixedsort` and `mixedorder` to 
+  control whether numbers in scientific notation are recognized. 
+  Resolved #7.
+  
+- Enhance `invalid` to detect `try-error` objects. #6
+
+Bug fixes:
+
+- Add support for R version 4 to `checkRVersion`.  Resolved #5.
+
+- Correct bug in `lastAdd` by explicitly checking for a `.Last` of
+  mode function.
+
+Behind the scenes:
+
+- Modernize package code by using `roxygen2` for documentation and 
+  managing the NAMESPACE.
+
+- Modernize C function registration. 
+
+- Replace http URLs with `https` and resolve broken links.
+
+- Add github actions to automated testing
+
+- Use pkgdown to generate HTML documentation.
+
+- Use `styler` package to standardize R code formatting.
+
+
 gtools 3.8.2 - 2020-03-23
 -------------------------
 
@@ -40,7 +114,7 @@ Enhancements:
   ask(..., con=file('stdin')).
 
 - R/na.replace.R, man/na.replace.Rd: na.replace() now
-	accepts a function to provide the replcement value.
+	accepts a function to provide the replacement value.
 
 - smartbind() has a new argument 'list' to pass a list of data frames,
   /instead of/in addition to/ data frames as arguments.
@@ -67,7 +141,7 @@ gtools 3.5.0 - 2015-04-28
 
 New Functions:
 
-- New roman2int() functon to convert roman numerals to integers
+- New roman2int() function to convert roman numerals to integers
   without the range restriction of utils::as.roman().
 
 - New asc() and chr() functions to convert between ASCII codes and
@@ -75,7 +149,7 @@ New Functions:
   at http://datadebrief.blogspot.com/2011/03/ascii-code-table-in-r.html).
 
 - New unByteCode() and unByteCodeAssign() functions to convert a
-  byte-code functon to an interpeted code function.
+  byte-code function to an interpreted code function.
 
 - New assignEdgewise() function for making assignments into locked
   environments. (Used by unByteCodeAssign().)
@@ -85,7 +159,7 @@ Enhancements:
 - mixedsort() and mixedorder() now have arguments 'decreasing',
   'na.last', and 'blank.last' arguments to control sort ordering.
 
-- mixedsort() and mixedirdeR() now support Roman numerals via the
+- mixedsort() and mixedorder() now support Roman numerals via the
   arguments 'numeric.type', and 'roman.case'.  (Request by David
   Winsemius, suggested code changes by Henrik Bengtsson.)
 
@@ -169,7 +243,7 @@ New features:
 - Add the getDependencies() function to return a list of dependencies
   for the specified package(s).  Includes arguments to control whether
   these dependencies should be constructed using information from
-  locally installed packages ('installed', default is TRUE), avilable
+  locally installed packages ('installed', default is TRUE), available
   CRAN packages ('available', default is TRUE) and whether to include
   base ('base', default=FALSE) and recommended ('recommended', default
   is FALSE) packages.
@@ -261,7 +335,7 @@ Bug fixes:
 
 Other changes:
 
-- Remove cross-reference to (obsolete?) moc package
+- Remove cross-reference to (obsolete?) `moc` package
 
 - The function 'assert()' (deprecated since gtools 2.5.0) is no longer
   available and has been marked defunct.
@@ -283,7 +357,7 @@ New features:
   character(s) used to separate components of constructed column names
 
 - smartbind() has a new 'verbose' argument to provide details on how
-  coluumns are being processed
+  columns are being processed
 
 Bug fixes:
 
@@ -321,7 +395,7 @@ gtools 2.5.0
 
 New features:
 
-- Add checkRVersion() function to determin if a newer version of R is
+- Add checkRVersion() function to determine if a newer version of R is
   available.
 
 - Deprecated assert() in favor of base::stopifnot
