@@ -1,5 +1,5 @@
 75c40aa58ce61c005172af9dad043d5a *ChangeLog
-2a9c6618e4134911a3e58fe3080f3a2a *DESCRIPTION
+d06b5d89297dfb24e5ffd31a54d71576 *DESCRIPTION
 e85fcfb5185a7bc0eb4d69f81b87ec8d *NAMESPACE
 7d6712607e0ae039d8023280bd5dec6c *NEWS.md
 a53791881dabd1a46d73be6fe2d77277 *R/ASCIIfy.R
@@ -44,8 +44,8 @@ a83bdb26482767035bdf55004add710f *R/strmacro.R
 09b934c80549bd2f0eb15d9fa7651f0b *R/trimws.R
 269a1b8996a42bbe8d88e809395da2c1 *R/unByteCode.R
 cc1b25f8dadb5738a50bc51a6ac9fd74 *README.md
-d2d2d0444a049d74694203974624835c *data/ELISA.rda
-273aa9cfc8e947fe6059a11a4813be57 *data/badDend.rda
+27bacc601f743a6f179685376d38ab58 *data/ELISA.rda
+0dd80fcdda5a7ddfa586c92224098a74 *data/badDend.rda
 75c40aa58ce61c005172af9dad043d5a *inst/ChangeLog
 7d6712607e0ae039d8023280bd5dec6c *inst/NEWS.md
 e0eb4deecd0ac0986738655ea569075e *inst/WORDLIST
@@ -57,7 +57,7 @@ ee93488803ee0c8ed7a46a8096dbdfc0 *man/ASCIIfy.Rd
 3e0cdeb6731f6a94308690a786c77a7b *man/baseOf.Rd
 2697c0764ba99ee77a1ddd7f71d973d3 *man/binsearch.Rd
 b32b2fe3f1a6ec0e48b985316dbe697e *man/capwords.Rd
-0fb429812138667a926e5e7c4de5494e *man/checkRVersion.Rd
+a67166f273618bb78bcd085703aead5e *man/checkRVersion.Rd
 b6386537169bb097aff8600e0e4c0185 *man/combinations.Rd
 2325b364a896514afaa2608cc3808cd6 *man/defmacro.Rd
 a0a28a5e5c9fab7c9ef073edc53a715e *man/dirichlet.Rd
