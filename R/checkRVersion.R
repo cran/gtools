@@ -30,10 +30,20 @@
 #' @export
 checkRVersion <- function(quiet = FALSE) {
 
-  cran_page <- scan(
-    file = "https://cran.r-project.org/src/base/R-4",
-    what = "", quiet = TRUE
-  )
+  CRAN <- getOption("repos")["CRAN"]
+  if(is.na(CRAN) || CRAN == "@CRAN@") CRAN <- "https://cran.r-project.org"
+  ## This might be a partial mirror or it might be offline
+  cran_page <- try(suppressWarnings(scan(
+      file = paste(CRAN, "src/base/R-4", sep ="/"),
+      what = "", quiet = TRUE)), silent = TRUE)
+  if(inherits(cran_page, "try-error")) {
+    CRAN <- Sys.getenv("R_CRAN_SRC", "https://cran.r-project.org")
+    cran_page <- try(scan(
+      file = paste(CRAN, "src/base/R-4", sep ="/"),
+      what = "", quiet = TRUE), silent = TRUE)
+    if(inherits(cran_page, "try-error"))
+        stop("CRAN is not available")
+  }
 
   matches <- grep("R-[0-9]\\.[0-9]+\\.[0-9]+", cran_page, value = TRUE)
   versionList <- gsub("^.*R-([0-9].[0-9]+.[0-9]+).*$", "\\1", matches)

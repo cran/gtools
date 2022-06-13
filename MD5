@@ -1,5 +1,5 @@
 75c40aa58ce61c005172af9dad043d5a *ChangeLog
-d06b5d89297dfb24e5ffd31a54d71576 *DESCRIPTION
+c0cb2f01cf408e11662990792b42b650 *DESCRIPTION
 e85fcfb5185a7bc0eb4d69f81b87ec8d *NAMESPACE
 7d6712607e0ae039d8023280bd5dec6c *NEWS.md
 a53791881dabd1a46d73be6fe2d77277 *R/ASCIIfy.R
@@ -11,7 +11,7 @@ c7439880e04ec478796740ff3c879863 *R/addLast.R
 593b68f8aff8a5c1e059d6b0c54f85ac *R/baseOf.R
 478f08804741b62f983f817345a59969 *R/binsearch.R
 da987c0357a497174d0c1f42fdc7f3f5 *R/capwords.R
-a75b94965afe805dd8d969b69b211dd6 *R/checkRVersion.R
+645ce7a4329f8d2213b24cb45b72d20c *R/checkRVersion.R
 2a9186215cfc458bfd3b13ce6a624a17 *R/clean_up_dependencies2.R
 aa43a886428c4378762f6d807448fdbb *R/combinations.R
 d027514b7a9a897e63995d8042c01260 *R/defmacro.R
@@ -98,4 +98,4 @@ ab21c759bfa25fc8768293d41a0d976e *src/setTCPNoDelay.c
 83eb930e1eeb4e7efb1f33ff5f567aa6 *tests/test_ddirichlet.R
 5c88de8837393d66922beae97d2792c8 *tests/test_mixedorder.R
 18554c65a8424b195470cd8a1f061642 *tests/test_script_file.R
-e798b2580df7fbac285d3a819d71e254 *tests/test_setTCPNoDelay.R
+7c2bbf78834adff75f688cc9e4a8a5e9 *tests/test_setTCPNoDelay.R
