@@ -39,6 +39,10 @@ interpreted from text rather than from byte-code.
 \code{unByteCodeAssign} changes the specified function \emph{in its source
 environment} to be directly interpreted from text rather than from
 byte-code.
+
+The latter two functions no longer work out of the box because \code{assignEdgewise}
+(which \code{unByteCodeAssign} uses) makes use of an unsafe \code{unlockBinding}
+call, but running \code{assignEdgewise()} will
 }
 \note{
 These functions are not intended as a permanent solution to issues
@@ -64,7 +68,9 @@ plot(dend)
 }
 
 ## convert stats:::plotNode from byte-code to interpreted-code
-unByteCodeAssign(stats:::plotNode)
+## (no longer available unless assignEdgewise is defined by the user)
+## unByteCodeAssign(stats:::plotNode)
+## illustrated in https://stackoverflow.com/questions/16559250/error-in-heatmap-2-gplots
 
 # increase recursion limit
 options("expressions" = 5e4)
@@ -74,7 +80,7 @@ plot(dend)
 }
 \references{
 These functions were inspired as a work-around to R bug
-\url{https://bugs.r-project.org/bugzilla/show_bug.cgi?id=15215}.
+\url{https://bugs.r-project.org/show_bug.cgi?id=15215}.
 }
 \seealso{
 \code{\link[compiler]{disassemble}}, \code{\link{assign}}

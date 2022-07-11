@@ -2,8 +2,7 @@ library("gtools")
 
 host <- "www.r-project.org"
 
-socket <- try(make.socket(host, 80))
-if(inherits(socket, "try-error")) q("no")
+socket <- make.socket(host, 80)
 print(socket)
 
 setTCPNoDelay(socket, TRUE)

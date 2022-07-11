@@ -20,11 +20,13 @@ doc/KEYWORDS file.
 \examples{
 
 ## Show all valid R keywords
+\dontrun{
 keywords()
 
 ## Show keywords associated with the 'merge' function
 keywords(merge)
 keywords("merge")
+}
 }
 \seealso{
 \code{\link[utils]{help}}

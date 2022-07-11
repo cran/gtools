@@ -17,7 +17,7 @@
 #' version is less than the latest version, or NULL.
 #' @note This function utilizes the internet to access the R project web site.
 #' If internet access is unavailable, the function will fail.
-#' @author Gregory R. Warnes \email{gregory.warnes@@rochester.edu>}
+#' @author Gregory R. Warnes
 #' @seealso \code{\link[base]{R.Version}}
 #' @keywords utilities
 #' @examples
@@ -30,20 +30,10 @@
 #' @export
 checkRVersion <- function(quiet = FALSE) {
 
-  CRAN <- getOption("repos")["CRAN"]
-  if(is.na(CRAN) || CRAN == "@CRAN@") CRAN <- "https://cran.r-project.org"
-  ## This might be a partial mirror or it might be offline
-  cran_page <- try(suppressWarnings(scan(
-      file = paste(CRAN, "src/base/R-4", sep ="/"),
-      what = "", quiet = TRUE)), silent = TRUE)
-  if(inherits(cran_page, "try-error")) {
-    CRAN <- Sys.getenv("R_CRAN_SRC", "https://cran.r-project.org")
-    cran_page <- try(scan(
-      file = paste(CRAN, "src/base/R-4", sep ="/"),
-      what = "", quiet = TRUE), silent = TRUE)
-    if(inherits(cran_page, "try-error"))
-        stop("CRAN is not available")
-  }
+  cran_page <- scan(
+    file = "https://cran.r-project.org/src/base/R-4",
+    what = "", quiet = TRUE
+  )
 
   matches <- grep("R-[0-9]\\.[0-9]+\\.[0-9]+", cran_page, value = TRUE)
   versionList <- gsub("^.*R-([0-9].[0-9]+.[0-9]+).*$", "\\1", matches)
